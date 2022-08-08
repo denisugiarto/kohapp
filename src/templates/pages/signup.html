@@ -3,7 +3,7 @@
 <main class="bd-main vh-100">
   <div class="bg-skew"></div>
   <div class="container px-md-6 px-lg-7">
-    <div class="mt-6">
+    <div class="mt-0">
       <h1 class="h1 mb-2">Create account</h1>
       <p class="mb-5">Welcome to kohapp, you can create, donate and record donations digitally</p>
       <form class="row g-3 needs-validation" novalidate>
@@ -28,11 +28,11 @@
               placeholder="Enter your password"
               required
             />
-            <a role="button" class="position-absolute top-50 end-0 translate-middle me-2 show_hide_password">
+            <div class="invalid-feedback">Please enter a valid password of at least 6 characters</div>
+            <a role="button" class="position-absolute top-0 end-0 translate-middle mt-5 me-2 show_hide_password">
               <i class="fa-solid fa-eye-slash"></i>
             </a>
           </div>
-          <div class="invalid-feedback">Please enter a valid password of at least 6 characters</div>
         </div>
         <div class="d-flex align-items-center">
           <input id="remember-me" class="form-check-input mt-0 me-2 pointer" type="checkbox" />

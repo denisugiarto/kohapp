@@ -39,6 +39,7 @@ $dark:          $gray-900;
 
 //Buttons
 $btn-padding-y: 1rem;
+$btn-font-weight: 500;
 
 //Containers
 $container-max-widths: (
@@ -52,6 +53,8 @@ $container-max-widths: (
 //Disable
 $disabled-color: $gray-500;
 $disabled-background: $gray-300;
+
+$enable-negative-margins: true;
 
 //Font Family
 $font-family-base: 'Azo Sans', sans-serif;
@@ -76,6 +79,7 @@ $font-sizes: (
 
 //FORM VALIDATION
 $form-feedback-icon-valid: '';
+$form-feedback-icon-invalid: '';
 $form-feedback-valid-color: $primary;
 
 //Grid 
