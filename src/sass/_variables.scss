@@ -49,6 +49,10 @@ $container-max-widths: (
   xxl: 744px
 );
 
+//Disable
+$disabled-color: $gray-500;
+$disabled-background: $gray-300;
+
 //Font Family
 $font-family-base: 'Azo Sans', sans-serif;
 
@@ -72,6 +76,7 @@ $font-sizes: (
 
 //FORM VALIDATION
 $form-feedback-icon-valid: '';
+$form-feedback-valid-color: $primary;
 
 //Grid 
 $grid-gutter-width: 2.5rem;
@@ -86,6 +91,9 @@ $input-padding-x: 1.5rem;
 
 //Input Check
 $form-check-input-border: 1px solid $dark;
+
+//Input Group
+$input-group-addon-bg: transparent;
 
 //Spacer
 $spacer: 1rem;
