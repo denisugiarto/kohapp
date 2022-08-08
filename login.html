@@ -28,8 +28,30 @@
   <body>
     
 <main class="bd-main">
-    <div class="container">
-        <h1 class="h1">Welcome to kohapp</h1>
+    <div class="bg-skew"></div>
+    <div class="container px-md-6 px-lg-7">
+        <div class="mt-7">
+            <h1 class="h1 mb-5">Welcome to kohapp</h1>
+            <form class="row g-3 needs-validation" novalidate>
+
+                <div class="mb-4">
+                    <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-4">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" id="password" name="password" type="password" placeholder="Enter your password">
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-center">
+                    <input id="remember-me" class="form-check-input mt-0 me-2" type="checkbox">
+                    <label for="remember-me">Remember me</label>
+                </div>
+                <a href="" role="button">Forgot Password?</a>
+            </div>
+            <button class="btn btn-dark">Sign In</button>
+        </form>
+        </div>
     </div>
 </main>
  <script
@@ -54,5 +76,30 @@ src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
 integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
 crossorigin=""
 ></script>  
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation');
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            'submit',
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
