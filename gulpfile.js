@@ -20,6 +20,7 @@ function htmlTemplate() {
     .pipe(nunjucksRender({ path: ['src/templates/components'] }))
     .pipe(dest('dist'));
 }
+
 //scss
 function compilescss() {
   return src('src/sass/**/*.scss')
@@ -43,6 +44,11 @@ function svgCopy() {
   return src('src/icons/*.svg').pipe(dest('dist/assets/icons'));
 }
 
+//font 
+function fontCopy() {
+  return src('src/font/*.*').pipe(dest('dist/assets/font'));
+}
+
 //create watch task
 function watchTask() {
   watch('src/templates/**/**/*.{html,njk}', htmlTemplate);
@@ -53,4 +59,4 @@ function watchTask() {
 }
 
 //default gulp
-exports.default = series(htmlTemplate, compilescss, webpImage, images, svgCopy, watchTask);
+exports.default = series(htmlTemplate, compilescss, webpImage, images, svgCopy, fontCopy, watchTask);
