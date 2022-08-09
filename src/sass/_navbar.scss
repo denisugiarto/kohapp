@@ -1,0 +1,9 @@
+.navbar-brand {
+  @extend .fw-semibold;
+  @extend .fs-md-2;
+}
+
+.navbar-toggler-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
