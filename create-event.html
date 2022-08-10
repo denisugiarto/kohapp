@@ -9,12 +9,15 @@
   <meta name="theme-color" content="#ffffff" />
   <title>Create Event
 Page</title>
-
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- Flatpickr Date Picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
+  <!-- Trix Text Editor -->
+  <link rel="stylesheet" type="text/css" href="./assets/library/trix/trix.css" />
+  <script type="text/javascript" src="./assets/library/trix/trix.js"></script>
 </head>
 
   <body>
@@ -78,19 +81,31 @@ Page</title>
 </div>
 
 <div class="container box-content">
-  <div class="mt-7">
-    <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
-    <input type="title" class="form-control" placeholder="Input title" />
-  </div>
-  <div class="mt-7">
-    <label for="" class="form-label">Hero Image</label>
-    <input type="file" accept="image/*" class="form-control" placeholder="Input title" />
-    <p class="mt-2">Max image size 3Mb</p>
-  </div>
-  <div class="mt-7">
-    <label for="" class="form-label">Specify the donation period</label>
-    <input id="date" type="date" name="date" class="form-control" />
-  </div>
+  <form>
+    <div class="mt-7">
+      <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
+      <input type="title" class="form-control" placeholder="Input title" />
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Hero Image</label>
+      <input type="file" accept="image/*" class="form-control" placeholder="Input title" />
+      <p class="mt-2">Max image size 3Mb</p>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Specify the donation period</label>
+      <div class="position-relative">
+        <input id="date" type="date" name="date" class="form-control ps-6" placeholder="Select your date" />
+        <div class="position-absolute top-50 start-0 translate-middle ms-3"><i class="fas fa-calendar"></i></div>
+      </div>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Tell your story</label>
+      <input id="x" type="hidden" name="content" />
+      <div class="border border-dark p-1 rounded">
+          <trix-editor input="x"></trix-editor>
+      </div>
+    </div>
+  </form>
 </div>
 
       
@@ -134,7 +149,7 @@ Page</title>
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+ 
 <script>
   flatpickr('#date', {
     mode: 'range',
@@ -142,7 +157,6 @@ Page</title>
     dateFormat: 'd-m-Y',
   });
   $(document).ready(function () {
-    $('.navigation-item > h6:contains("Events")').parent().addClass('active');
   });
 </script>
 
