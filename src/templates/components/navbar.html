@@ -1,0 +1,114 @@
+{% macro pages() %}
+<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="home.html">Kohapp</a>
+    <a role="button" class="ms-auto me-6"><i class="fas fa-search fs-4"></i></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div
+  class="offcanvas offcanvas-end bg-dark text-white"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="container sidebar">
+    <div class="offcanvas-header border-bottom px-0 pt-7 pb-4">
+      <button
+        type="button"
+        class="btn-close btn-close-white ms-auto fs-4"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex mt-7">
+        <div class="col d-none d-sm-block">
+          <h3 class="fs-4 fs-md-2 mb-4">Kohapp</h3>
+          <p>
+            Supporting users to digitally create, <br />
+            donate, collect and record <br />
+            donations.
+          </p>
+        </div>
+        <div class="col-auto d-flex flex-column gap-6">
+          <h3 class="fs-2">Menu</h3>
+          <a href=""><i class="fas fa-file-alt me-2"></i>My Event</a>
+          <a href=""><i class="fas fa-user-alt me-2"></i>My Profile</a>
+          <a href=""><i class="fas fa-book me-2"></i>My Donation</a>
+          <a href=""><i class="fas fa-user-gear me-2"></i>Akahu Account</a>
+          <button class="btn btn-primary mt-3">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro  detailPages(title) %}
+<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+  <div class="container gap-3 gap-md-5 gap-xl-6">
+    <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
+    <a class="navbar-brand text-center col" href="">{{ title }}</a>
+    <a role="button" class="ms-auto"><i class="fas fa-search fs-4"></i></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasRight"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+<div
+  class="offcanvas offcanvas-end bg-dark text-white"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="container sidebar">
+    <div class="offcanvas-header border-bottom px-0 pt-7 pb-4">
+      <button
+        type="button"
+        class="btn-close btn-close-white ms-auto fs-4"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="d-flex mt-7">
+        <div class="col d-none d-sm-block">
+          <h3 class="fs-4 fs-md-2 mb-4">Kohapp</h3>
+          <p>
+            Supporting users to digitally create, <br />
+            donate, collect and record <br />
+            donations.
+          </p>
+        </div>
+        <div class="col-auto d-flex flex-column gap-6">
+          <h3 class="fs-2">Menu</h3>
+          <a href=""><i class="fas fa-file-alt me-2"></i>My Event</a>
+          <a href=""><i class="fas fa-user-alt me-2"></i>My Profile</a>
+          <a href=""><i class="fas fa-book me-2"></i>My Donation</a>
+          <a href=""><i class="fas fa-user-gear me-2"></i>Akahu Account</a>
+          <button class="btn btn-primary mt-3">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

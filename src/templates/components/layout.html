@@ -1,25 +1,38 @@
-{% import '../components/header.html' as header %} {% import '../components/sidebar-script.html' as sidebarScript %}
+{% import './bottom-navigation.html' as btmNav %}
 <!DOCTYPE html>
 <html lang="en">
   {% include "./head.html" %}
   <body>
-    <div class="grid-container">
-      <!-- HEADER -->
-      {{ header.public() }}
-
-      <!-- SIBEDAR -->
-      {% include '../components/sidebar.html' %}
-
-      <!-- CONTENT -->
+    <main class="bd-main vh-100">
+      <div class="bg-skew"></div>
       {% block content %} {% endblock %}
-    </div>
-    <!-- FOOTER -->
-    {% include "./footer.html" %}
+      {{ btmNav.pages() }}
+    </main>
+    {% block modal %} {% endblock %} {% include "./footer.html" %} {% block script %} {% endblock %}
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
 
-    <!-- SIDEBAR ITEM -->
-    {{ sidebarScript.admin() }}
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation');
 
-    <!-- SCRIPT -->
-    {% block script %} {% endblock %}
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            'submit',
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      })();
+    </script>
   </body>
 </html>

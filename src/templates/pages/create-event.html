@@ -1,0 +1,56 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Create Event
+Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %} {{
+navbar.detailPages('Create Event') }}
+<div class="container box-content">
+  <form>
+    <div class="mt-7">
+      <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
+      <input type="title" class="form-control" placeholder="Input title" />
+    </div>
+    <div class="mt-7">
+      <label class="form-label">Hero Image</label>
+      <input id="hero-image"  name="hero-image" type="file" accept="image/*" class="d-none" onchange="thumbnail(event)" />
+      <label for="hero-image" class="box-hero-image"><i class="fas fa-plus fs-1"></i></label>
+      <p class="mt-2">Max image size 3Mb</p>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Specify the donation period</label>
+      <div class="position-relative">
+        <input id="date" type="date" name="date" class="form-control ps-6" placeholder="Select your date" />
+        <div class="position-absolute top-50 start-0 translate-middle ms-3"><i class="fas fa-calendar"></i></div>
+      </div>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Tell your story</label>
+      <input id="x" type="hidden" name="content" />
+      <div class="border border-dark p-1 rounded">
+          <trix-editor input="x"></trix-editor>
+      </div>
+    </div>
+    <div class="mt-7">
+        <button type="submit" class="btn btn-secondary me-6 px-6" disabled>Create Event</button>
+        <button type="submit" class="btn px-6" disabled>Save as Draft</button>
+    </div>
+  </form>
+</div>
+{% endblock %} {% block script %}
+<script>
+  flatpickr('#date', {
+    mode: 'range',
+    minDate: 'today',
+    dateFormat: 'd-m-Y',
+  });
+
+  function thumbnail(event) {
+    let file = event.target.files[0];
+    let imgUrl = URL.createObjectURL(file);
+    console.log(imgUrl);
+    
+    $('label.box-hero-image').addClass('border-0').html(`
+    <img src="${imgUrl}" alt="Uploaded image" class="hero-image-wrapper" />
+    `)
+  }
+    $(document).ready(function () {
+  });
+</script>
+{% endblock %}

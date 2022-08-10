@@ -23,7 +23,7 @@ function htmlTemplate() {
 
 //scss
 function compilescss() {
-  return src('src/sass/**/*.scss')
+  return src('src/sass/*.scss')
     .pipe(sass())
     .pipe(prefix('last 2 versions'))
     .pipe(minify())
@@ -49,6 +49,11 @@ function fontCopy() {
   return src('src/font/*.*').pipe(dest('dist/assets/font'));
 }
 
+//library 
+function libraryCopy() {
+  return src('src/library/**/*.*').pipe(dest('dist/assets/library'));
+}
+
 //create watch task
 function watchTask() {
   watch('src/templates/**/**/*.{html,njk}', htmlTemplate);
@@ -59,4 +64,4 @@ function watchTask() {
 }
 
 //default gulp
-exports.default = series(htmlTemplate, compilescss, webpImage, images, svgCopy, fontCopy, watchTask);
+exports.default = series(htmlTemplate, compilescss, webpImage, images, svgCopy, fontCopy, libraryCopy, watchTask);

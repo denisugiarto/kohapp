@@ -1,7 +1,5 @@
-{% extends '../components/layout-no-sidebar.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle =
+{% extends '../components/layout-no-navbar.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle =
 'Create Account Page' %} {% block content %}
-<main class="bd-main vh-100">
-  <div class="bg-skew"></div>
   <div class="container box-content px-md-7 px-lg-8">
     <div class="mt-0">
       <h1 class="h1 mb-2">Create account</h1>
@@ -57,7 +55,6 @@
       </div>
     </div>
   </div>
-</main>
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {

@@ -10,7 +10,7 @@
 //Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-@import 'font', 'navbar';
+@import 'font', 'navbar', 'buttons', './components/bottom-navbar', './components/trix-editor';
 
 html,
 body {
@@ -43,9 +43,43 @@ body {
   }
   .box-content {
     transform: translateY(-346px);
+    padding-bottom: 120px;
     @include media-breakpoint-up(xxl) {
       transform: translateY(-432px);
     }
+  }
+}
+
+.box-bottom-navigation {
+  @extend .fixed-bottom;
+  @extend .border-top;
+  @extend .border-secondary;
+  @extend .pb-3;
+  @extend .pt-4;
+  background-color: $primary2;
+}
+
+.box-image-event {
+  @extend .rounded;
+  width: 160px;
+  height: 221px;
+  object-fit: cover;
+  object-position: top;
+
+  @include media-breakpoint-up('lg') {
+    width: 264px;
+  }
+}
+
+.collection-title {
+  @extend .h4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  @include media-breakpoint-up('md') {
+    -webkit-line-clamp: 2;
   }
 }
 
@@ -59,6 +93,33 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.form-label {
+  @extend .d-block;
+}
+
+.box-hero-image {
+  @extend .border; 
+  @extend .border-dotted; 
+  @extend .border-dark; 
+  @extend .rounded; 
+  @extend .pointer; 
+  @extend .border-2;
+  @extend .flex-center;
+  width: 264px;
+  height: 227px;
+  
+  .hero-image-wrapper {
+    @extend .box-hero-image;
+    @extend .img-fluid;
+    @extend .border-0;
+  }
+}
+
+.img-fluid {
+  object-fit: cover;
+  object-position: top;
 }
 
 .icon {
@@ -104,10 +165,15 @@ body {
   }
 }
 
-.show_hide_password {
-  z-index: 1000;
+.page-title {
+  @extend .fs-4;
+  @extend .fs-md-2;
 }
 
 .pointer {
   cursor: pointer;
+}
+
+.show_hide_password {
+  z-index: 1000;
 }

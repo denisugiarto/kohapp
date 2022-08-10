@@ -5,4 +5,12 @@ $utilities: (
     class: fs,
     values: $font-sizes,
   ),
+  'border-style': (
+    property: border-style,
+    class: border,
+    values: (
+      dotted: dotted,
+      dashed: dashed,
+    )
+  )
 );

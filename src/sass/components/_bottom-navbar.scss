@@ -1,0 +1,8 @@
+.navigation-item {
+    @extend .text-center;
+    color: $secondary;
+
+    &.active {
+        color: $dark;
+    }
+}
