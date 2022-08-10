@@ -87,8 +87,9 @@ Page</title>
       <input type="title" class="form-control" placeholder="Input title" />
     </div>
     <div class="mt-7">
-      <label for="" class="form-label">Hero Image</label>
-      <input type="file" accept="image/*" class="form-control" placeholder="Input title" />
+      <label class="form-label">Hero Image</label>
+      <input id="hero-image"  name="hero-image" type="file" accept="image/*" class="d-none" onchange="thumbnail(event)" />
+      <label for="hero-image" class="hero-image"><i class="fas fa-plus fs-1"></i></label>
       <p class="mt-2">Max image size 3Mb</p>
     </div>
     <div class="mt-7">
@@ -104,6 +105,10 @@ Page</title>
       <div class="border border-dark p-1 rounded">
           <trix-editor input="x"></trix-editor>
       </div>
+    </div>
+    <div class="mt-7">
+        <button type="submit" class="btn btn-secondary me-6 px-6" disabled>Create Event</button>
+        <button type="submit" class="btn px-6" disabled>Save as Draft</button>
     </div>
   </form>
 </div>
@@ -156,7 +161,17 @@ Page</title>
     minDate: 'today',
     dateFormat: 'd-m-Y',
   });
-  $(document).ready(function () {
+
+  function thumbnail(event) {
+    let file = event.target.files[0];
+    let imgUrl = URL.createObjectURL(file);
+    console.log(imgUrl);
+    
+    $('label.hero-image').addClass('border-0').html(`
+    <img src="${imgUrl}" alt="Uploaded image" class="img-fluid hero-image border-0" />
+    `)
+  }
+    $(document).ready(function () {
   });
 </script>
 
