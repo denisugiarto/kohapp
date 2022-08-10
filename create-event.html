@@ -89,7 +89,7 @@ Page</title>
     <div class="mt-7">
       <label class="form-label">Hero Image</label>
       <input id="hero-image"  name="hero-image" type="file" accept="image/*" class="d-none" onchange="thumbnail(event)" />
-      <label for="hero-image" class="hero-image"><i class="fas fa-plus fs-1"></i></label>
+      <label for="hero-image" class="box-hero-image"><i class="fas fa-plus fs-1"></i></label>
       <p class="mt-2">Max image size 3Mb</p>
     </div>
     <div class="mt-7">
@@ -167,8 +167,8 @@ Page</title>
     let imgUrl = URL.createObjectURL(file);
     console.log(imgUrl);
     
-    $('label.hero-image').addClass('border-0').html(`
-    <img src="${imgUrl}" alt="Uploaded image" class="img-fluid hero-image border-0" />
+    $('label.box-hero-image').addClass('border-0').html(`
+    <img src="${imgUrl}" alt="Uploaded image" class="hero-image-wrapper" />
     `)
   }
     $(document).ready(function () {
