@@ -9,81 +9,74 @@
   <title>Sign In Page</title>
 
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-  <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-      crossorigin=""
-    />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
 </head>
 
   <body>
-    
-<main class="bd-main vh-100">
-  <div class="bg-skew"></div>
-  <div class="container box-content px-md-7 px-lg-8">
-    <div class="mt-4">
-      <h1 class="h1 mb-6">Welcome to kohapp</h1>
-      <form class="row g-3 needs-validation" novalidate>
-        <div class="mb-2">
-          <label class="form-label" for="email">Email</label>
-          <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email" required />
-          <div class="invalid-feedback">This email address looks wrong</div>
-        </div>
-        <div class="mb-2">
-          <label class="form-label" for="password">Password</label>
-          <div class="input-group position-relative">
-            <input
-              class="form-control rounded"
-              id="password"
-              name="password"
-              type="password"
-              placeholder="Enter your password"
-              required
-            />
+    <main class="bd-main vh-100">
+      <div class="bg-skew"></div>
+      
 
-            <div class="invalid-feedback">All passwords must be at least 6 characters</div>
-            <a role="button" class="position-absolute top-0 end-0 translate-middle mt-6 me-2 show_hide_password">
-              <i class="fa-solid fa-eye-slash"></i>
-            </a>
-          </div>
-        </div>
-        <div class="d-flex justify-content-between">
-          <div class="d-flex align-items-center">
-            <input id="remember-me" class="form-check-input mt-0 me-2 pointer" type="checkbox" />
-            <label for="remember-me" class="pointer">Remember me</label>
-          </div>
-          <a href="recover-password.html" role="button">Forgot Password?</a>
-        </div>
-        <div>
-          <button type="submit" class="btn btn-dark w-100">Sign In</button>
-        </div>
-      </form>
-      <h6 class="h6 my-6 text-center">Or</h6>
-      <div class="row gy-6">
-        <div>
-          <button class="btn btn-outline-dark w-100">
-            <img src="./assets/icons/icon-google.svg" alt="icon-google" class="d-inline-block icon-md" />
-            Sign In With Google
-          </button>
-        </div>
-        <p class="text-center mb-6">
-          Don’t have an account?
-          <a href="signup.html" class="fw-bold" role="button">Sign Up</a>
-        </p>
+<div class="container box-content px-md-7 px-lg-8">
+  <div class="mt-4">
+    <h1 class="h1 mb-6">Welcome to kohapp</h1>
+    <form class="row g-3 needs-validation" novalidate>
+      <div class="mb-2">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-control" id="email" name="email" type="email" placeholder="Enter your email" required />
+        <div class="invalid-feedback">This email address looks wrong</div>
       </div>
+      <div class="mb-2">
+        <label class="form-label" for="password">Password</label>
+        <div class="input-group position-relative">
+          <input
+            class="form-control rounded"
+            id="password"
+            name="password"
+            type="password"
+            placeholder="Enter your password"
+            required
+          />
+
+          <div class="invalid-feedback">All passwords must be at least 6 characters</div>
+          <a role="button" class="position-absolute top-0 end-0 translate-middle mt-6 me-2 show_hide_password">
+            <i class="fa-solid fa-eye-slash"></i>
+          </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+          <input id="remember-me" class="form-check-input mt-0 me-2 pointer" type="checkbox" />
+          <label for="remember-me" class="pointer">Remember me</label>
+        </div>
+        <a href="recover-password.html" role="button">Forgot Password?</a>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-dark w-100">Sign In</button>
+      </div>
+    </form>
+    <h6 class="h6 my-6 text-center">Or</h6>
+    <div class="row gy-6">
+      <div>
+        <button class="btn btn-outline-dark w-100">
+          <img src="./assets/icons/icon-google.svg" alt="icon-google" class="d-inline-block icon-md" />
+          Sign In With Google
+        </button>
+      </div>
+      <p class="text-center mb-6">
+        Don’t have an account?
+        <a href="signup.html" class="fw-bold" role="button">Sign Up</a>
+      </p>
     </div>
   </div>
-</main>
- <script
+</div>
+
+
+    </main>
+      <script
   src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
   integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
   crossorigin="anonymous"
@@ -99,12 +92,7 @@
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
-<script
-src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-crossorigin=""
-></script> 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
 <script>
   $(document).ready(function () {
     $('.show_hide_password').click(function () {
