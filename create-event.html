@@ -84,11 +84,18 @@ Page</title>
   <form>
     <div class="mt-7">
       <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
-      <input type="title" class="form-control" placeholder="Input title" />
+      <input type="text" class="form-control" placeholder="Input title" />
     </div>
     <div class="mt-7">
       <label class="form-label">Hero Image</label>
-      <input id="hero-image"  name="hero-image" type="file" accept="image/*" class="d-none" onchange="thumbnail(event)" />
+      <input
+        id="hero-image"
+        name="hero-image"
+        type="file"
+        accept="image/*"
+        class="d-none"
+        onchange="thumbnail(event)"
+      />
       <label for="hero-image" class="box-hero-image"><i class="fas fa-plus fs-1"></i></label>
       <p class="mt-2">Max image size 3Mb</p>
     </div>
@@ -103,12 +110,12 @@ Page</title>
       <label for="" class="form-label">Tell your story</label>
       <input id="x" type="hidden" name="content" />
       <div class="border border-dark p-1 rounded">
-          <trix-editor input="x"></trix-editor>
+        <trix-editor input="x"></trix-editor>
       </div>
     </div>
-    <div class="mt-7 ">
-        <button type="submit" class="btn btn-secondary col-12 col-sm-auto me-6 px-6" disabled>Create Event</button>
-        <button type="submit" class="btn px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
+    <div class="mt-7">
+      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Create Event</button>
+      <button type="submit" class="btn px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
     </div>
   </form>
 </div>
@@ -166,12 +173,18 @@ Page</title>
     let file = event.target.files[0];
     let imgUrl = URL.createObjectURL(file);
     console.log(imgUrl);
-    
+
     $('label.box-hero-image').addClass('border-0').html(`
     <img src="${imgUrl}" alt="Uploaded image" class="hero-image-wrapper" />
-    `)
+    `);
   }
-    $(document).ready(function () {
+  $(document).change(function () {
+    $('button:submit').attr('disabled', false);
+    $('button:submit')
+      .filter(function () {
+        return $(this).text() === 'Save as Draft';
+      })
+      .addClass('border-dark');
   });
 </script>
 
