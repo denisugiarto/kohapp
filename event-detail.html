@@ -23,58 +23,45 @@ Page</title>
   <body>
     <main class="bd-main vh-100">
       <div class="bg-skew"></div>
-      
+       
+<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+  <div class="container gap-3 gap-md-5 gap-xl-6">
+    <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
+    <a class="navbar-brand text-center col" href="">Kohapp</a>
+  </div>
+</nav>
+
 <div class="container box-content">
-  <h1 class="page-title my-7">Kohapp Event</h1>
-    <div class="position-relative">
-        <input type="search" name="search" class="form-control ps-7" placeholder="Search" />
-        <div class="position-absolute top-50 start-0 translate-middle ms-5"><i class="fas fa-search"></i></div>
+  <div class="d-flex mt-7 gap-5">
+    <h2 class="fs-md-3 fs-5">Tangihanga William Berghan</h2>
+    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Event</h6>
+  </div>
+  <img src="./assets/images/picture-1.webp" alt="picture" class="img-fluid rounded mt-6" />
+  <p class="mt-4 text-end"><u>Post by Calib Jackson</u></p>
+  <h6 class="fs-6 mt-6">Open Donation : August 03 - August 10</h6>
+  <p class="mt-6">
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
+    me mahi ma tenei paltform.
+  </p>
+  <form action="">
+    <div class="mt-7">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Input your name" />
     </div>
-    
-<div class="d-flex border-bottom border-dark mt-6 gap-4">
-  <div class="col">
-    <h5 class="h5 mb-3">Tangihanga</h5>
-    <h3 class="h3 mb-4">William Berghan</h3>
-    <h6 class="h6 mb-4"><i class="fas fa-tag me-1"></i>Event</h6>
-    <p class="mb-4">Open Donation : Aug 03 - Aug 10</p>
-    <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
-  </div>
-  <div class="col-auto">
-    <img src="./assets/images/picture-1.webp" class="box-image-event" alt="profile" />
-  </div>
-</div>
-
-    
-<div class="d-flex border-bottom border-dark mt-6 gap-4">
-  <div class="col">
-    <h3 class="collection-title mb-4" title="Wade Warren cheerful smile was snatched away by a leaky">
-      Wade Warren cheerful smile was snatched away by a leaky
-    </h3>
-    <h6 class="h6 mb-4"><i class="fas fa-tag me-1"></i>Collection</h6>
-    <p class="mb-4">$31,840 <span class="text-secondary">collectted of $100,000 goal</span></p>
-    <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
-  </div>
-  <div class="col-auto">
-    <img src="./assets/images/picture-2.webp" class="box-image-event" alt="profile" />
-  </div>
-</div>
-
-    
-<div class="d-flex border-bottom border-dark mt-6 gap-4">
-  <div class="col">
-    <h5 class="h5 mb-3">Tangihanga</h5>
-    <h3 class="h3 mb-4">Jenny Wilson</h3>
-    <h6 class="h6 mb-4"><i class="fas fa-tag me-1"></i>Event</h6>
-    <p class="mb-4">Open Donation : Aug 03 - Aug 10</p>
-    <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
-  </div>
-  <div class="col-auto">
-    <img src="./assets/images/picture-3.webp" class="box-image-event" alt="profile" />
-  </div>
-</div>
-
-    
-    <a href="" role="button" class="flex-center fw-semibold mt-7">Show more<i class="fas fa-angle-down ms-2"></i></a>
+    <div class="mt-6">
+      <label for="donation" class="form-label">Enter your donation</label>
+      <div class="position-relative">
+        <div class="position-absolute top-50 start-0 translate-middle ms-5 fw-bold">$</div>
+        <input type="number" class="form-control fw-bold ps-6" min="0.01" step="0.01" max="2500.00" value="0.00" />
+      </div>
+    </div>
+    <div class="mt-6">
+      <label for="" class="form-label">Message</label>
+    </div>
+    <div class="mt-7">
+      <button type="submit" class="btn btn-dark px-6">Bump To Koha</button>
+    </div>
+  </form>
 </div>
 
       
@@ -121,7 +108,7 @@ Page</title>
  
 <script>
   $(document).ready(function () {
-    $('.navigation-item > h6:contains("Events")').parent().addClass('active');
+    // $('.navigation-item > h6:contains("Events")').parent().addClass('active');
   });
 </script>
 
