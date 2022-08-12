@@ -74,32 +74,34 @@ Detail</title>
             <a role="button" data-bs-target=".message-template" data-bs-toggle="collapse"
               ><i class="fas fa-message me-2"></i>Message Template</a
             >
-            <input id="video" name="video" type="file" accept="video/*" class="d-none">
+            <input id="video" name="video" type="file" accept="video/*" class="d-none" />
             <label for="video" class="pointer"><i class="fas fa-paperclip me-2"></i>Add Video Message</label>
           </div>
           <p class="fs-7 text-secondary">Click one of the options above to add a message</p>
         </div>
         <div class="card-body">
           <div class="message-template collapse fade mb-4">
-            <select id="message-template" class="form-select message-template-box" size="5" aria-label="select message template" required>
+            <select
+              id="message-template"
+              class="form-select message-template-box"
+              size="5"
+              aria-label="select message template"
+              required
+            >
               <option>
                 Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
               </option>
               <option>
                 Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
               </option>
-              <option>
-                Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-              </option>
+              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
               <option>
                 Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
               </option>
               <option>
                 Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
               </option>
-              <option>
-                Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-              </option>
+              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
             </select>
             <div class="invalid-feedback">No message selected, please select message</div>
             <!-- <div class="position-relative">
@@ -129,18 +131,24 @@ Detail</title>
               <div class="invalid-feedback">No message selected, please select message</div>
             </div> -->
             <div class="d-flex justify-content-end gap-3 mt-7">
-              <button class="btn border px-4" data-bs-target=".message-template" data-bs-toggle="collapse">Cancel</button>
+              <button class="btn border px-4" data-bs-target=".message-template" data-bs-toggle="collapse">
+                Cancel
+              </button>
               <button type="submit" class="confirm btn btn-dark px-4">Confirmation</button>
             </div>
           </div>
-          <div class="position-relative">
-            <video class="w-100 collapse fade" controls>
-              <div class="position-absolute">
-                <a href=""><i class="fas fa-xmark"></i></a>
-              </div>
+          <div class="position-relative video-box collapse fade">
+            <video class="w-100 rounded " controls></video>
+            <div class="position-absolute translate-middle top-0 start-100 mt-4 ms-n4">
+              <a role="button" class="delete-video"><i class="fas fa-xmark text-white"></i></a>
+            </div>
           </div>
-          </video>
-          <textarea name="message" id="message" class="form-control border-0 message-template collapse fade show p-1" rows="3"></textarea>
+          <textarea
+            name="message"
+            id="message"
+            class="form-control border-0 message-template collapse fade show p-1"
+            rows="3"
+          ></textarea>
         </div>
       </div>
     </div>
@@ -193,7 +201,6 @@ Detail</title>
 ></script>
  
 <script>
-  
   $(document).ready(function () {
     $('form').submit(function (event) {
       event.preventDefault();
@@ -201,24 +208,27 @@ Detail</title>
         window.location.href = 'donation-success.html';
       }
     });
-
     //button corfirm add option to textarea message
-    $('button.confirm').click(function() {
+    $('button.confirm').click(function () {
       let value = $.trim($('#message-template option:selected').text());
       let textAreaValue = $('#message').val() == '' ? $('#message').val() : $('#message').val() + ' ';
       $('#message').val(textAreaValue + value);
       $('.message-template').toggleClass('show');
+    });
+
+    $('.delete-video').click(function () {
+      $('.video-box').removeClass('show');
+      $('input#video').val('');
     })
   });
 
-  $('input#video').change(function() {
+  $('input#video').change(function () {
     let file = $('input#video').prop('files')[0];
     let type = file.type;
     let videoLink = URL.createObjectURL(file);
-
-    $('video').addClass('show').attr('src', videoLink).attr('type', type);
-  })
-
+    $('.video-box').addClass('show');
+    $('video').attr('src', videoLink).attr('type', type);
+  });
 </script>
 
     <script>
