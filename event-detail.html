@@ -133,6 +133,13 @@ Detail</title>
               <button type="submit" class="confirm btn btn-dark px-4">Confirmation</button>
             </div>
           </div>
+          <div class="position-relative">
+            <video class="w-100 collapse fade" controls>
+              <div class="position-absolute">
+                <a href=""><i class="fas fa-xmark"></i></a>
+              </div>
+          </div>
+          </video>
           <textarea name="message" id="message" class="form-control border-0 message-template collapse fade show p-1" rows="3"></textarea>
         </div>
       </div>
@@ -204,20 +211,13 @@ Detail</title>
     })
   });
 
-  // $('input#video').change(function() {
-  //   alert("ok");
-  // })
-  // $(document).change(function () {
-  //   let file = $('input#video').prop('files')[0];
-  //   let videoLink = URL.createObjectURL(file);
-  //   console.log('video Link: ', videoLink);
-  //   $('#message').prepend(
-  //     `<video width="100%" controls>
-  //       <source src="${videoLink}" type="video/mp4">
-  //     </video>`
-  //   )
-  //   console.log($('input#video'));
-  // })
+  $('input#video').change(function() {
+    let file = $('input#video').prop('files')[0];
+    let type = file.type;
+    let videoLink = URL.createObjectURL(file);
+
+    $('video').addClass('show').attr('src', videoLink).attr('type', type);
+  })
 
 </script>
 
