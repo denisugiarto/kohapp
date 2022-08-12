@@ -10,7 +10,7 @@
 //Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-@import 'font', 'navbar', 'buttons', './components/bottom-navbar', './components/trix-editor';
+@import 'font', 'navbar', 'buttons', 'form-select', './components/bottom-navbar', './components/trix-editor', './components/scrollbar';
 
 html,
 body {
@@ -25,6 +25,14 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+textarea {
+  resize: none;
 }
 
 body {
@@ -50,6 +58,10 @@ body {
   }
 }
 
+.bg-primary2 {
+  background-color: $primary2;
+}
+
 .box-bottom-navigation {
   @extend .fixed-bottom;
   @extend .border-top;
@@ -57,6 +69,24 @@ body {
   @extend .pb-3;
   @extend .pt-4;
   background-color: $primary2;
+}
+
+.box-hero-image {
+  @extend .border; 
+  @extend .border-dotted; 
+  @extend .border-dark; 
+  @extend .rounded; 
+  @extend .pointer; 
+  @extend .border-2;
+  @extend .flex-center;
+  width: 264px;
+  height: 227px;
+  
+  .hero-image-wrapper {
+    @extend .box-hero-image;
+    @extend .img-fluid;
+    @extend .border-0;
+  }
 }
 
 .box-image-event {
@@ -99,27 +129,21 @@ body {
   @extend .d-block;
 }
 
-.box-hero-image {
-  @extend .border; 
-  @extend .border-dotted; 
-  @extend .border-dark; 
-  @extend .rounded; 
-  @extend .pointer; 
-  @extend .border-2;
-  @extend .flex-center;
-  width: 264px;
-  height: 227px;
-  
-  .hero-image-wrapper {
-    @extend .box-hero-image;
-    @extend .img-fluid;
-    @extend .border-0;
+.form-select {
+  option {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-wrap;
+  }
+  option:not(:last-child) {
+    margin-bottom: 20px;
   }
 }
 
 .img-fluid {
   object-fit: cover;
   object-position: top;
+  aspect-ratio: 5 / 4;
 }
 
 .icon {
@@ -163,6 +187,10 @@ body {
     width: 64px;
     height: 64px;
   }
+}
+
+.mh-200px {
+  max-height: 200px
 }
 
 .page-title {

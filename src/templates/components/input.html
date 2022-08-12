@@ -1,0 +1,6 @@
+{% macro search(placeholder, value) %}
+<div class="position-relative">
+  <input type="search" name="search" class="form-control ps-7" placeholder="{{placeholder}}" value="{{ value }}" />
+  <div class="position-absolute top-50 start-0 translate-middle ms-5"><i class="fas fa-search"></i></div>
+</div>
+{% endmacro %}

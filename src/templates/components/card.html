@@ -1,9 +1,9 @@
 {% macro event(name, date, imgUrl) %}
 <div class="d-flex border-bottom border-dark mt-6 gap-4">
   <div class="col">
-    <h5 class="h5 mb-3">Tangihanga</h5>
-    <h3 class="h3 mb-4">{{ name }}</h3>
-    <h6 class="h6 mb-4"><i class="fas fa-tag me-1"></i>Event</h6>
+    <h5 class="fs-5 mb-3">Tangihanga</h5>
+    <h3 class="fs-3 mb-4">{{ name }}</h3>
+    <h6 class="fs-6 mb-4"><i class="fas fa-tag me-1"></i>Event</h6>
     <p class="mb-4">Open Donation : {{ date }}</p>
     <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
   </div>
@@ -11,15 +11,17 @@
     <img src="{{ imgUrl }}" class="box-image-event" alt="profile" />
   </div>
 </div>
-{% endmacro%} {% macro collection() %}
+{% endmacro%} 
+<!-- Card Collection -->
+{% macro collection() %}
 <div class="d-flex border-bottom border-dark mt-6 gap-4">
   <div class="col">
     <h3 class="collection-title mb-4" title="Wade Warren cheerful smile was snatched away by a leaky">
       Wade Warren cheerful smile was snatched away by a leaky
     </h3>
-    <h6 class="h6 mb-4"><i class="fas fa-tag me-1"></i>Collection</h6>
+    <h6 class="fs-6 mb-4"><i class="fas fa-tag me-1"></i>Collection</h6>
     <p class="mb-4">$31,840 <span class="text-secondary">collectted of $100,000 goal</span></p>
-    <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
+    <a role="button" href="collection-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
   </div>
   <div class="col-auto">
     <img src="./assets/images/picture-2.webp" class="box-image-event" alt="profile" />

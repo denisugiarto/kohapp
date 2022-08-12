@@ -1,0 +1,16 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Donation
+Success' %} {% import './navbar.html' as navbar %} {% block content %} {{ navbar.detailPages('Kohapp') }}
+<div class="container box-content">
+  <div class="flex-center flex-column mt-7 mt-md-8">
+    <img src="./assets/images/image-success-donation.webp" alt="illustraton success donation" class="img-fluid mb-6" />
+    <h5 class="fs-5 mb-6">Kia Ora! A Koha of 1100.00 has been made.</h5>
+    <a role="button" href="home.html" class="btn btn-dark col-12 col-sm-6">Back To Home</a>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    // $('.navigation-item > h6:contains("Events")').parent().addClass('active');
+  });
+</script>
+{% endblock %}

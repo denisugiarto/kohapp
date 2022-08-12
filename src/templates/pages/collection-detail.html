@@ -3,12 +3,12 @@ Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.
 navbar.detailPages('Kohapp') }}
 <div class="container box-content">
   <div class="d-flex mt-7 gap-5">
-    <h2 class="fs-md-3 fs-5">Tangihanga William Berghan</h2>
-    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Event</h6>
+    <h2 class="fs-md-3 fs-5">Wade Warren cheerful smile was snatched away by a leaky</h2>
+    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Collection</h6>
   </div>
-  <img src="./assets/images/picture-1.webp" alt="picture" class="img-fluid rounded mt-6" />
+  <img src="./assets/images/picture-2.webp" alt="picture" class="img-fluid rounded mt-6" />
   <p class="mt-4"><u>Post by Calib Jackson</u></p>
-  <h6 class="fs-6 mt-6">Open Donation : August 03 - August 10</h6>
+  <h6 class="fs-6 mt-6">$31,840 <span class="text-secondary fw-normal">collectted of $100,000 goal</span></h6>
   <p class="mt-6">
     Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
     me mahi ma tenei paltform.
@@ -50,69 +50,43 @@ navbar.detailPages('Kohapp') }}
           <p class="fs-7 text-secondary">Click one of the options above to add a message</p>
         </div>
         <div class="card-body">
-          <div class="message-template collapse fade mb-4">
-            <select
-              id="message-template"
-              class="form-select message-template-box"
-              size="5"
-              aria-label="select message template"
-              required
-            >
-              <option>
-                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
-              </option>
-              <option>
-                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
-              </option>
-              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
-              <option>
-                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
-              </option>
-              <option>
-                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
-              </option>
-              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
-            </select>
-            <div class="invalid-feedback">No message selected, please select message</div>
-            <!-- <div class="position-relative">
-              <select id="message-template" class="form-select message-template-box" size="5" aria-label="select message template" required>
+            <div class="message-template collapse fade mb-4">
+              <select
+                id="message-template"
+                class="form-select message-template-box"
+                size="5"
+                aria-label="select message template"
+                required
+              >
                 <option>
                   Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
                 </option>
                 <option>
                   Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
                 </option>
-                <option>
-                  Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-                </option>
+                <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
                 <option>
                   Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
                 </option>
                 <option>
                   Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
                 </option>
-                <option>
-                  Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-                </option>
+                <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
               </select>
-              <div class="position-absolute mt-n6 start-0 fs-7 bg-primary2 w-100 text-end rounded-bottom border-top text-secondary px-2 py-1">
-                11 message template
-              </div>
               <div class="invalid-feedback">No message selected, please select message</div>
-            </div> -->
-            <div class="d-flex justify-content-end gap-3 mt-5">
-              <button class="btn border px-4" data-bs-target=".message-template" data-bs-toggle="collapse">
-                Cancel
-              </button>
-              <button type="submit" class="confirm btn btn-dark px-4">Confirmation</button>
+              <div class="d-flex justify-content-end gap-3 mt-5">
+                <button class="btn border px-4" data-bs-target=".message-template" data-bs-toggle="collapse">
+                  Cancel
+                </button>
+                <button type="submit" class="confirm btn btn-dark px-4">Confirmation</button>
+              </div>
             </div>
-          </div>
-          <div class="position-relative video-box collapse fade">
-            <video class="w-100 rounded " controls></video>
-            <div class="position-absolute translate-middle top-0 start-100 mt-4 ms-n4">
-              <a role="button" class="delete-video"><i class="fas fa-xmark text-white"></i></a>
+            <div class="position-relative video-box collapse fade">
+              <video class="w-100 rounded" controls></video>
+              <div class="position-absolute translate-middle top-0 start-100 mt-4 ms-n4">
+                <a role="button" class="delete-video"><i class="fas fa-xmark text-white"></i></a>
+              </div>
             </div>
-          </div>
           <textarea
             name="message"
             id="message"
@@ -143,13 +117,13 @@ navbar.detailPages('Kohapp') }}
       if (value != '') {
           $('#message').val(textAreaValue + value);
           $('.message-template').toggleClass('show');
-      }      
+      }
     });
 
     $('.delete-video').click(function () {
       $('.video-box').removeClass('show');
       $('input#video').val('');
-    })
+    });
   });
 
   $('input#video').change(function () {

@@ -1,15 +1,22 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Create Event
-Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content %} {{
-navbar.detailPages('Create Event') }}
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Start
+Collect Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content
+%} {{ navbar.detailPages('Start Collect') }}
 <div class="container box-content">
   <div class="mt-7">
-    {{ alert.success('Event successfully published') }}
+    {{ alert.success('Collection successfully published') }}
     {{ alert.danger('Title is required') }}
   </div>
   <form>
     <div class="mt-4">
       <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
-      <input type="text" class="form-control" placeholder="Input title" />
+      <input type="text" class="form-control" placeholder="Input title collect" />
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Enter your goal here<span class="text-danger">*</span> </label>
+      <div class="position-relative">
+        <div class="position-absolute top-50 start-0 translate-middle ms-5 fw-bold">$</div>
+        <input type="number" class="form-control fw-bold ps-6" min="0.01" step="0.01" max="2500.00" value="0.00" />
+      </div>
     </div>
     <div class="mt-7">
       <label class="form-label">Hero Image</label>
@@ -25,13 +32,6 @@ navbar.detailPages('Create Event') }}
       <p class="mt-2">Max image size 3Mb</p>
     </div>
     <div class="mt-7">
-      <label for="" class="form-label">Specify the donation period</label>
-      <div class="position-relative">
-        <input id="date" type="date" name="date" class="form-control ps-6" placeholder="Select your date" />
-        <div class="position-absolute top-50 start-0 translate-middle ms-3"><i class="fas fa-calendar"></i></div>
-      </div>
-    </div>
-    <div class="mt-7">
       <label for="" class="form-label">Tell your story</label>
       <input id="x" type="hidden" name="content" />
       <div class="border border-dark p-1 rounded">
@@ -39,19 +39,13 @@ navbar.detailPages('Create Event') }}
       </div>
     </div>
     <div class="mt-7">
-      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Create Event</button>
+      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Start Collect</button>
       <button type="submit" class="btn px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
     </div>
   </form>
 </div>
 {% endblock %} {% block script %}
 <script>
-  flatpickr('#date', {
-    mode: 'range',
-    minDate: 'today',
-    dateFormat: 'd-m-Y',
-  });
-
   function thumbnail(event) {
     let file = event.target.files[0];
     let imgUrl = URL.createObjectURL(file);
