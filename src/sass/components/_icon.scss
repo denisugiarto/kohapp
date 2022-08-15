@@ -1,0 +1,37 @@
+.icon {
+  @extend .flex-center;
+  @extend .text-white;
+  @extend .rounded-1;
+  @extend .lh-1;
+
+  &-xs {
+    width: 14px;
+    height: 14px;
+  }
+
+  &-sm {
+    width: 20px;
+    height: 20px;
+  }
+
+  &-md {
+    width: 24px;
+    height: 24px;
+  }
+
+  &-lg {
+    width: 32px;
+    height: 32px;
+  }
+
+  &-xl {
+    @extend .fs-2;
+    width: 50px;
+    height: 50px;
+  }
+
+  &-xxl {
+    width: 64px;
+    height: 64px;
+  }
+}

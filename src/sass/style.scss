@@ -10,7 +10,7 @@
 //Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-@import 'font', 'navbar', 'buttons', 'form-select', './components/bottom-navbar', './components/trix-editor', './components/scrollbar';
+@import 'font', 'nav', 'navbar', 'buttons', 'form-select', './components/icon', './components/bottom-navbar', './components/notification', './components/trix-editor', './components/scrollbar';
 
 html,
 body {
@@ -79,9 +79,12 @@ body {
   @extend .pointer; 
   @extend .border-2;
   @extend .flex-center;
-  width: 264px;
-  height: 227px;
-  
+
+  @include media-breakpoint-up('md') {
+    width: 260px;
+    height: 208px;
+  }
+    
   .hero-image-wrapper {
     @extend .box-hero-image;
     @extend .img-fluid;
@@ -90,14 +93,14 @@ body {
 }
 
 .box-image-event {
+  @extend .img-fluid;
   @extend .rounded;
-  width: 160px;
-  height: 221px;
   object-fit: cover;
   object-position: top;
 
-  @include media-breakpoint-up('lg') {
-    width: 264px;
+  @include media-breakpoint-up('md') {
+    width: 260px;
+    height: 208px;
   }
 }
 
@@ -144,49 +147,7 @@ body {
   object-fit: cover;
   object-position: top;
   aspect-ratio: 5 / 4;
-}
-
-.icon {
-  @extend .flex-center;
-  @extend .text-white;
-  @extend .rounded-1;
-  aspect-ratio: 1 / 1;
-
-  &-xs {
-    width: 14px;
-    height: 14px;
-  }
-
-  &-sm {
-    width: 20px;
-    height: 20px;
-  }
-
-  &-md {
-    width: 24px;
-    height: 24px;
-  }
-
-  &-lg {
-    width: 32px;
-    height: 32px;
-  }
-
-  &-xlg {
-    width: 44px;
-    height: 44px;
-  }
-
-  &-xl {
-    @extend .fs-2;
-    width: 50px;
-    height: 50px;
-  }
-
-  &-xxl {
-    width: 64px;
-    height: 64px;
-  }
+  width: 100%;
 }
 
 .mh-200px {

@@ -1,0 +1,21 @@
+.notification {
+  @extend .d-flex; 
+  @extend .mt-6; 
+  @extend .gap-2; 
+  @extend .border-bottom;
+  @extend .pb-3;
+  
+    .notification-avatar {
+      @extend .icon; 
+      @extend .icon-lg;
+      @extend .fs-6;
+      @extend .fs-md-3;
+      @extend .bg-primary4; 
+      @extend .rounded-circle;
+    
+      @include media-breakpoint-up(md){
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }

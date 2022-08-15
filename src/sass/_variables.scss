@@ -1,5 +1,5 @@
 // Gray Colors
-$gray-100: #FFFFFF;
+$gray-100: #F8F8F8;
 $gray-200: #F3F3F4;
 $gray-300: #E7E8E9;
 $gray-400: #CFD1D4;
@@ -23,6 +23,7 @@ $grays: (
 );
 $primary1: #E4B19C;
 $primary2: #F4DED1;
+$primary4: #617E7A;
 $green: #23AC00;
 $cyan: #4D69FF;
 $yellow: #FAD200;
@@ -36,6 +37,19 @@ $warning:       $yellow;
 $danger:        $red;
 $light:         $gray-100;
 $dark:          $gray-900;
+
+$theme-colors: (
+  "primary":    $primary,
+  "primary2":    $primary2,
+  "primary4":    $primary4,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+);
 
 //Border 
 $border-color: $gray-900;
@@ -73,6 +87,12 @@ $container-max-widths: (
 $disabled-color: $gray-500;
 $disabled-background: $gray-300;
 
+//Dropdown
+$dropdown-dark-color: $gray-100;
+$dropdown-dark-bg:  $gray-900;
+$dropdown-border-radius: 10px;
+
+//Enable Negative Margin
 $enable-negative-margins: true;
 
 //Font Family
@@ -140,6 +160,15 @@ $navbar-light-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.
 $navbar-light-toggler-border-color: none;
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
+
+//Navlink
+$nav-link-font-size: 20px;
+$nav-link-padding-x:  0;
+$nav-link-padding-y: .25rem;   
+$nav-tabs-border-width: 0;
+$nav-link-color: $gray-700;
+$nav-tabs-link-active-color: $gray-900;
+$nav-tabs-link-active-bg: transparent;
 
 //Offcanvas
 $offcanvas-horizontal-width: 100vw;

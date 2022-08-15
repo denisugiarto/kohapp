@@ -1,0 +1,55 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Notification
+Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import
+'../components/notification.html' as notification %} {% block content %} {{ navbar.pages() }}
+<div class="container box-content">
+  <h1 class="page-title my-7 text-center">Notification</h1>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link active"
+        id="all-notif-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#all-notif"
+        type="button"
+        role="tab"
+        aria-controls="all-notif"
+        aria-selected="true"
+      >
+        All
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="unread-notif-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#unread-notif"
+        type="button"
+        role="tab"
+        aria-controls="unread-notif"
+        aria-selected="false"
+      >
+        Unread
+      </button>
+    </li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="all-notif" role="tabpanel" aria-labelledby="all-notification-tab" >
+      {{ notification.item() }} {{ notification.item() }} {{ notification.remove() }} {{ notification.item() }} {{ notification.readed() }}
+    </div>
+    <div class="tab-pane fade" id="unread-notif" role="tabpanel" aria-labelledby="unread-notification-tab">
+        {{ notification.item() }} {{ notification.item() }} {{ notification.item() }}
+    </div>
+  </div>
+  <div class="text-center mt-7">
+    <img src="./assets/images/image-no-notification.webp" alt="no notification images">
+    <h6 class=" fs-6 mt-5">No notifications at this time</h6>
+  </div>
+</div>
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    $('.navigation-item > h6:contains("Alerts")').parent().addClass('active');
+  });
+</script>
+{% endblock %}
