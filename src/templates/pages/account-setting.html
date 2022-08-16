@@ -1,0 +1,22 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Account
+Setting Page' %} {% import './navbar.html' as navbar %} {% block content %} {{ navbar.detailPages('Account',
+'myprofile.html') }}
+<div class="container box-content">
+  <div class="mt-7 d-flex">
+    <h5 class="fs-5">Change Email</h5>
+    <a class="ms-auto" role="button" href="change-email.html"><i class="fas fa-angle-right"></i></a>
+  </div>
+
+  <div class="mt-7 d-flex">
+    <h5 class="fs-5">Change Password</h5>
+    <a class="ms-auto" role="button" href="change-password.html"><i class="fas fa-angle-right"></i></a>
+  </div>
+
+  <div class="mt-7">
+    <a role="button" class="btn btn-outline-dark col-lg-6">Logout</a>
+  </div>
+</div>
+
+{% endblock %} {% block script %}
+<script></script>
+{% endblock %}

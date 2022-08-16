@@ -1,0 +1,36 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'My Profile
+Page' %} {% import './navbar.html' as navbar %} {% block content %} {{ navbar.detailPages('My Profile', 'home.html') }}
+<div class="container box-content">
+  <div class="d-flex mt-7 mt-md-8 gap-2 border-bottom pb-2">
+    <div class="col-auto">
+        <div class="icon icon-xxl rounded-circle bg-primary4">
+            Z
+        </div>
+    </div>
+    <div class="col">
+        <h5 class="fs-5 mb-2">Cameron Williamson</h5>
+        <a role="button" href="edit-profile.html" class="btn btn-dark btn-sm">Edit profile</a>
+    </div>
+  </div>
+
+  <div class="mt-7">
+    <h5 class="fs-5">Connected Email</h5>
+    <p>Cameron@gmail.com</p>
+  </div>
+  <div class="mt-7 d-flex align-items-center">
+    <div class="col">
+        <h5 class="fs-5">Account</h5>
+        <p>Email, Password, Log out.</p>
+    </div>
+    <div class="col-auto">
+        <a role="button" href="account-setting.html"><i class="fas fa-angle-right"></i></a>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block script %} 
+<script>
+  $(document).ready(function () {
+    // $('.navigation-item > h6:contains("Events")').parent().addClass('active');
+  });
+</script>
+{% endblock %}

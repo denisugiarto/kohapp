@@ -1,6 +1,6 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Start
 Collect Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content
-%} {{ navbar.detailPages('Start Collect') }}
+%} {{ navbar.detailPages('Start Collect', 'home.html') }}
 <div class="container box-content">
   <div class="mt-7">
     {{ alert.success('Collection successfully published') }}

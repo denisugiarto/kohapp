@@ -1,6 +1,6 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event
 Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %} {{
-navbar.detailPages('Kohapp') }}
+navbar.detailPages('Kohapp', 'event.html') }}
 <div class="container box-content">
   <div class="d-flex mt-7 gap-5">
     <h2 class="fs-md-3 fs-5">Wade Warren cheerful smile was snatched away by a leaky</h2>
@@ -104,6 +104,7 @@ navbar.detailPages('Kohapp') }}
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
+    $('.navigation-item > h6:contains("Events")').parent().addClass('active');
     $('form').submit(function (event) {
       event.preventDefault();
       if ($('input[name=name]').val() && $('input[name=donation]').val() > 0) {

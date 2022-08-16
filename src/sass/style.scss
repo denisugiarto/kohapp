@@ -62,6 +62,22 @@ body {
   background-color: $primary2;
 }
 
+.box-avatar {
+  @extend .border-dark;
+  @extend .border-dashed;
+  @extend .icon;
+  @extend .icon-xxl; 
+  @extend .rounded-circle;
+
+  .image-wrapper {
+    @extend .icon;
+    @extend .icon-xxl;
+    @extend .rounded-circle;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
 .box-bottom-navigation {
   @extend .fixed-bottom;
   @extend .border-top;

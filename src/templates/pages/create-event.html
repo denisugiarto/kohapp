@@ -1,6 +1,6 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Create Event
 Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content %} {{
-navbar.detailPages('Create Event') }}
+navbar.detailPages('Create Event', 'home.html') }}
 <div class="container box-content">
   <div class="mt-7">
     {{ alert.success('Event successfully published') }}
@@ -40,7 +40,7 @@ navbar.detailPages('Create Event') }}
     </div>
     <div class="mt-7">
       <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Create Event</button>
-      <button type="submit" class="btn px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
+      <button type="submit" class="btn btn-outline-dark px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
     </div>
   </form>
 </div>
@@ -67,7 +67,7 @@ navbar.detailPages('Create Event') }}
       .filter(function () {
         return $(this).text() === 'Save as Draft';
       })
-      .addClass('border-dark');
+      .attr('disabled', false);
   });
 </script>
 {% endblock %}

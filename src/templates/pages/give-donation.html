@@ -1,13 +1,13 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Give Donation
 Page' %} {% import './navbar.html' as navbar %} {% import './input.html' as input %} {% import '../components/card.html' as card %} {% block content %} {{
-navbar.detailPages('Give Donation') }}
+navbar.detailPages('Give Donation', 'home.html') }}
 <div class="container box-content">
   <p class="mt-7 mb-6 text-center">Type keywords relative to event you’re looking for.</p>
     {{ input.search('Search', 'William') }}
     {{ card.event('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp') }}
     {{ card.collection() }}
     <div class="d-flex justify-content-center mt-6">
-        <img src="./assets/images/image-search-not-found.webp" alt="images for data not found" class="img-fluid">
+        <img src="./assets/images/image-search-not-found.webp" alt="images for data not found">
     </div>
     <h6 class="fs-6 mt-5 text-center">Sorry, we couldn't any for this search.</h6>
 </div>
