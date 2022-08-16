@@ -1,6 +1,6 @@
 .btn-lg {
     @include media-breakpoint-up('md') {
-        font-style: 16px;
+        font-size: 16px;
         padding-left: 67px;
         padding-right: 67px;
     }
