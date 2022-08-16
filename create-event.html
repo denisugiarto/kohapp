@@ -82,7 +82,7 @@ Page</title>
     </div>
     <div class="mt-7">
       <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Create Event</button>
-      <button type="submit" class="btn px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
+      <button type="submit" class="btn btn-outline-dark px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
     </div>
   </form>
 </div>
@@ -152,7 +152,7 @@ Page</title>
       .filter(function () {
         return $(this).text() === 'Save as Draft';
       })
-      .addClass('border-dark');
+      .attr('disabled', false);
   });
 </script>
 

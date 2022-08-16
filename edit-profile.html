@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Home Page</title>
+  <title>Edit Profile
+Page</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <!-- Flatpickr Date Picker -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
@@ -22,87 +23,53 @@
   <body>
     <main class="bd-main vh-100">
       <div class="bg-skew"></div>
-      
-
+       
 <nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="home.html">Kohapp</a>
-    <a role="button" class="ms-auto me-6"><i class="fas fa-search fs-4"></i></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasRight"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <div class="container gap-3 gap-md-5 gap-xl-6">
+    <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
+    <a class="navbar-brand text-center col" href="">Edit Profile</a>
   </div>
 </nav>
-<div
-  class="offcanvas offcanvas-end bg-dark text-white"
-  tabindex="-1"
-  id="offcanvasRight"
-  aria-labelledby="offcanvasRightLabel"
->
-  <div class="container sidebar">
-    <div class="offcanvas-header border-bottom px-0 pt-7 pb-4">
-      <button
-        type="button"
-        class="btn-close btn-close-white ms-auto fs-4"
-        data-bs-dismiss="offcanvas"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="offcanvas-body">
-      <div class="d-flex mt-7">
-        <div class="col d-none d-sm-block">
-          <h3 class="fs-4 fs-md-2 mb-4">Kohapp</h3>
-          <p>
-            Supporting users to digitally create, <br />
-            donate, collect and record <br />
-            donations.
-          </p>
-        </div>
-        <div class="col-auto d-flex flex-column gap-6">
-          <h3 class="fs-2">Menu</h3>
-          <a href=""><i class="fas fa-file-alt me-2"></i>My Event</a>
-          <a href="myprofile.html"><i class="fas fa-user-alt me-2"></i>My Profile</a>
-          <a href=""><i class="fas fa-book me-2"></i>My Donation</a>
-          <a href=""><i class="fas fa-user-gear me-2"></i>Akahu Account</a>
-          <button class="btn btn-primary mt-3">Sign In</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div class="container box-content text-center">
-  <h1 class="page-title mt-7">Kohapp</h1>
-  <p class="mt-4 mb-7">
-    Supporting users to digitally create, donate, <br />
-    collect and record donations.
+<div class="container box-content">
+  <div class="mt-7">
+<div class="alert alert-success alert-dismissible fade show " role="alert">
+  <i class="fas fa-check-circle me-1"></i>
+  Profile changed successfully
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+ 
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <i class="fas fa-check-circle me-1"></i>
+  Sorry, the file size is too big. Maks 1 MB
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+</div>
+  <p class="border-bottom mt-7 pb-3 fs-5">
+    Manage your profile information to control, protect and secure your account.
   </p>
-  <a href="give-donation.html">
-    <div class="d-flex align-items-center justify-content-between border-bottom border-dark py-6">
-      <h5 class="fs-5">Give Donation</h5>
-      <i class="fas fa-angle-right"></i>
+  <form class="needs-validation" novalidate>
+    <div class="mt-6">
+      <label for="name" class="form-label">Name</label>
+      <input name="name" class="form-control" type="text" placeholder="Input your name" value="Erika" required />
+      <div class="invalid-feedback">Type your name</div>
     </div>
-  </a>
-  <a href="start-collection.html">
-    <div class="d-flex align-items-center justify-content-between border-bottom border-dark py-6">
-      <h5 class="fs-5">Start Collection</h5>
-      <i class="fas fa-angle-right"></i>
+
+    <div class="mt-7">
+      <div class="img-preview mb-6">
+        <label for="avatar" class="box-avatar"></label>
+      </div>
+      
+    <input class="d-none" name="avatar" id="avatar" type="file" accept="image/*" onchange="thumbnail(event)">
+    <label for="avatar" class="btn btn-outline-dark btn-sm">Select Image</label>
+
+      <p class="fs-7 text-secondary mt-2">Image size : maks. 1 MB</p>
+      <p class="fs-7 text-secondary mt-2">Image formats : .JPEG, .PNG</p>
     </div>
-  </a>
-  <a href="create-event.html">
-    <div class="d-flex align-items-center justify-content-between border-bottom border-dark py-6">
-      <h5 class="fs-5">Create Event</h5>
-      <i class="fas fa-angle-right"></i>
+    <div class="mt-7">
+      <button type="submit" class="btn btn-dark">Update Profile</button>
     </div>
-  </a>
+  </form>
 </div>
 
       
@@ -149,9 +116,15 @@
 ></script>
  
 <script>
-  $(document).ready(function () {
-    $('.navigation-item > h6:contains("Home")').parent().addClass('active');
-  });
+  function thumbnail(event) {
+    let file = event.target.files[0];
+    let imgUrl = URL.createObjectURL(file);
+    console.log(imgUrl);
+
+    $('label.box-avatar').addClass('border-0').html(`
+    <img src="${imgUrl}" alt="Uploaded image" class="image-wrapper" />
+    `);
+  }
 </script>
 
     <script>
