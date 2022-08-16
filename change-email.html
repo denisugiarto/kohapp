@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Edit Profile
+  <title>Change Email
 Page</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <!-- Flatpickr Date Picker -->
@@ -26,8 +26,8 @@ Page</title>
        
 <nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
-    <a href="myprofile.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
-    <a class="navbar-brand text-center col" href="">Edit Profile</a>
+    <a href="account-setting.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
+    <a class="navbar-brand text-center col" href="">Change Email</a>
   </div>
 </nav>
 
@@ -35,41 +35,59 @@ Page</title>
   <div class="mt-6">
 <div class="alert alert-success alert-dismissible fade show " role="alert">
   <i class="fas fa-check-circle me-1"></i>
-  Profile changed successfully
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
- 
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <i class="fas fa-check-circle me-1"></i>
-  Sorry, the file size is too big. Maks 1 MB
+  Email successfully updated
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 </div>
-  <p class="border-bottom mt-7 pb-3 fs-5 lh-sm">
-    Manage your profile information to control, protect and secure your account.
-  </p>
   <form class="needs-validation w-lg-75" novalidate>
     <div class="mt-6">
-      <label for="name" class="form-label">Name</label>
-      <input name="name" class="form-control" type="text" placeholder="Input your name" value="Erika" required />
-      <div class="invalid-feedback">Type your name</div>
-    </div>
-
-    <div class="mt-6">
-      <div class="img-preview mb-6">
-        <label for="avatar" class="box-avatar border-0 bg-primary4 fs-4">
-            Z
-        </label>
-      </div>
+        
+<label for="password" class="form-label">Password</label>
+<div class="position-relative">
+  <input
+    name="password"
+    class="form-control"
+    type="password"
+    placeholder="Enter current password"
+    value=""
+    required
+  />
+  <div class="invalid-feedback">Type your current password</div>
+  <a role="button" class="show-password position-absolute start-100 top-0 mt-4 ms-n7"><i class="fas fa-eye-slash"></i></a>
+</div>
       
-<input class="d-none" name="avatar" id="avatar" type="file" accept="image/*" onchange="thumbnail(event)" />
-<label for="avatar" class="btn btn-outline-dark btn-sm">Select Image</label>
-
-      <p class="fs-7 text-secondary mt-2">Image size : maks. 1 MB</p>
-      <p class="fs-7 text-secondary mt-2">Image formats : .JPEG, .PNG</p>
     </div>
+    <div class="mt-6">
+        
+<label for="email" class="form-label">Email</label>
+<input
+  name="email"
+  class="form-control"
+  type="email"
+  placeholder="Enter new email"
+  value=""
+  required
+/>
+<div class="invalid-feedback">Type your new email</div>
+      
+    </div>
+    <div class="mt-6">
+        
+<label for="re-email" class="form-label">Repeat New Email</label>
+<input
+  name="re-email"
+  class="form-control"
+  type="email"
+  placeholder="Enter new email"
+  value=""
+  required
+/>
+<div class="invalid-feedback">Type your new email</div>
+      
+    </div>
+
     <div class="mt-7">
-      <button type="submit" class="btn btn-dark col-12">Update Profile</button>
+      <button type="submit" class="btn btn-dark col-12">Update email</button>
     </div>
   </form>
 </div>
@@ -118,15 +136,7 @@ Page</title>
 ></script>
  
 <script>
-  function thumbnail(event) {
-    let file = event.target.files[0];
-    let imgUrl = URL.createObjectURL(file);
-    console.log(imgUrl);
 
-    $('label.box-avatar').addClass('border-0').html(`
-    <img src="${imgUrl}" alt="Uploaded image" class="image-wrapper" />
-    `);
-  }
 </script>
 
     <script>
