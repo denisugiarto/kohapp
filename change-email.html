@@ -39,9 +39,8 @@ Page</title>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 </div>
-  <form class="needs-validation w-lg-75" novalidate>
+  <form class="needs-validation" novalidate>
     <div class="mt-6">
-        
 <label for="password" class="form-label">Password</label>
 <div class="position-relative">
   <input
@@ -55,10 +54,8 @@ Page</title>
   <div class="invalid-feedback">Type your current password</div>
   <a role="button" class="show-password position-absolute start-100 top-0 mt-4 ms-n7"><i class="fas fa-eye-slash"></i></a>
 </div>
-      
-    </div>
+</div>
     <div class="mt-6">
-        
 <label for="email" class="form-label">Email</label>
 <input
   name="email"
@@ -68,11 +65,9 @@ Page</title>
   value=""
   required
 />
-<div class="invalid-feedback">Type your new email</div>
-      
-    </div>
+<div class="invalid-feedback">This email address looks wrong</div>
+</div>
     <div class="mt-6">
-        
 <label for="re-email" class="form-label">Repeat New Email</label>
 <input
   name="re-email"
@@ -82,12 +77,11 @@ Page</title>
   value=""
   required
 />
-<div class="invalid-feedback">Type your new email</div>
-      
-    </div>
+<div class="invalid-feedback">This email address looks wrong</div>
+</div>
 
     <div class="mt-7">
-      <button type="submit" class="btn btn-dark col-12">Update email</button>
+      <button type="submit" class="btn btn-dark">Update email</button>
     </div>
   </form>
 </div>
@@ -136,7 +130,21 @@ Page</title>
 ></script>
  
 <script>
-
+  $(document).ready(function () {
+    $('.show-password').click(function () {
+      if ($(this).children().hasClass('fa-eye-slash')) {
+        //change icon
+        $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+        //change inputt type to text
+        $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+      } else {
+        //change icon
+        $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+        //change inputt type to text
+        $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+      }
+    });
+  });
 </script>
 
     <script>
