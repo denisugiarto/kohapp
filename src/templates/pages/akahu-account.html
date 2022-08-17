@@ -1,0 +1,34 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Akahu Account
+Page' %} {% import './navbar.html' as navbar %} {% import './modal.html' as modal %} {% import './alert.html' as alert
+%} {% block content %} {{ navbar.detailPages('Akahu Account', 'home.html') }}
+<div class="container box-content">
+  <h5 class="fs-5 border-bottom pb-2 mt-7">Saved bank account</h5>
+  <div class="mt-6 text-center">
+    <div class="collapse fade akahu-account">
+        <div class="d-flex text-start gap-2 align-items-center border-bottom pb-3">
+          <div class="col-auto">
+            <div class="icon icon-xxl bg-primary4 rounded-circle fs-3">C</div>
+          </div>
+          <div class="col">
+            <h5 class="fs-5 mb-2">Cameron Williamson</h5>
+            <p class="fs-5">Akahu Account 2359</p>
+          </div>
+          <div class="col-auto">
+            <a href="#deleteModal" role="button" data-bs-toggle="modal">
+              <i class="fas fa-trash-alt text-danger" aria-describedby="button delete account"></i>
+            </a>
+          </div>
+        </div>
+        <a href="" class="mt-6 btn btn-dark">Add New Account</a>
+    </div>   
+    <div class="collapse fade show akahu-account">
+        <div class="mb-6"></div>
+        <img src="./assets/images/image-no-notification.webp" alt="icon account not found " />
+        <h6 class="fs-6 mt-6">No. Saved Account</h6>
+        <a role="button" data-bs-target=".akahu-account" data-bs-toggle="collapse" class="mt-6 btn btn-dark">Connect to akahu</a>
+    </div>
+  </div>
+</div>
+{{ modal.delete('', 'Cameron Williamson') }} {% endblock %} {% block script %}
+<script></script>
+{% endblock %}

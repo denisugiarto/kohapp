@@ -1,3 +1,4 @@
+<!-- Card Event -->
 {% macro event(name, date, imgUrl) %}
 <div class="d-flex flex-column-reverse flex-md-row border-bottom border-dark mt-6 gap-4">
   <div class="col">
@@ -5,13 +6,15 @@
     <h3 class="fs-3 mb-4">{{ name }}</h3>
     <h6 class="fs-6 mb-4"><i class="fas fa-tag me-1"></i>Event</h6>
     <p class="mb-4">Open Donation : {{ date }}</p>
-    <a role="button" href="event-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
+    <a role="button" href="event-koha.html" class="btn btn-dark btn-lg mb-4">Koha</a>
+    <a role="button" href="event-detail.html" class="btn btn-outline-dark btn-lg mb-4 ms-3">Detail</a>
   </div>
   <div class="col-auto">
     <img src="{{ imgUrl }}" class="box-image-event" alt="profile" />
   </div>
 </div>
-{% endmacro%} 
+{% endmacro %}
+
 <!-- Card Collection -->
 {% macro collection() %}
 <div class="d-flex flex-column-reverse flex-md-row border-bottom border-dark mt-6 gap-4">
@@ -21,10 +24,50 @@
     </h3>
     <h6 class="fs-6 mb-4"><i class="fas fa-tag me-1"></i>Collection</h6>
     <p class="mb-4">$31,840 <span class="text-secondary">collectted of $100,000 goal</span></p>
-    <a role="button" href="collection-detail.html" class="btn btn-dark btn-lg mb-4">Koha</a>
+    <a role="button" href="collection-koha.html" class="btn btn-dark btn-lg mb-4">Koha</a>
+    <a role="button" href="collection-detail.html" class="btn btn-outline-dark btn-lg mb-4 ms-3">Detail</a>
   </div>
   <div class="col-auto">
     <img src="./assets/images/picture-2.webp" class="box-image-event" alt="profile" />
   </div>
 </div>
-{% endmacro%}
+{% endmacro %}
+
+<!-- Card Message -->
+{% macro message(name, donation) %}
+<div class="d-flex border-bottom pb-3 mt-6 gap-2">
+  <div class="col-auto">
+    <div class="icon icon-xxl bg-primary4 fs-4 rounded-circle">{{ name | first }}</div>
+  </div>
+  <div class="col mt-2 me-md-6">
+    <h4 class="fs-4">{{ name }}</h4>
+    <p class="text-secondary">Give donation ${{ donation }}</p>
+    <p class="fs-6 mt-3">
+      Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+    </p>
+  </div>
+  <div class="col-auto">
+    <p class="text-secondary">1 hour ago</p>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Card Message with Video -->
+{% macro messageWithVideo(name, donation) %}
+<div class="d-flex border-bottom pb-3 mt-6 gap-2">
+  <div class="col-auto">
+    <div class="icon icon-xxl bg-primary4 fs-4 rounded-circle">{{ name | first }}</div>
+  </div>
+  <div class="col mt-2 me-md-6">
+    <h4 class="fs-4">{{ name }}</h4>
+    <p class="text-secondary">Give donation ${{ donation }}</p>
+    <video src="./assets/videos/sad videos.mp4" class="rounded img-fluid mt-3" controls></video>
+    <p class="fs-6 mt-3">
+      Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+    </p>
+  </div>
+  <div class="col-auto">
+    <p class="text-secondary">1 hour ago</p>
+  </div>
+</div>
+{% endmacro %}

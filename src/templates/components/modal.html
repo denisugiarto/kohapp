@@ -1,0 +1,25 @@
+<!-- DELETE MESSAGE -->
+{% macro delete(id, message) %}
+<div class="modal fade" id="delete{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">      
+      <div class="modal-header text-start">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure delete <span class="fw-semibold">{{ message }}</span>?</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row gx-3 justify-content-end">
+          <div class="col-auto">
+            <a role="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+          </div>
+          <div class="col-auto">
+            <a id="delete{{ id }}Button" role="button" class="btn btn-dark" data-bs-dismiss="modal"> Delete </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
