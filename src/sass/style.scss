@@ -134,7 +134,8 @@ body {
 }
 
 .collection-title {
-  @extend .h4;
+  @extend .fs-4;
+  @extend .fs-lg-3;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

@@ -1,0 +1,24 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'My Donation
+Page' %} {% import './navbar.html' as navbar %} {% import './card.html' as card %} {% import './modal.html' as modal %}
+{% import './alert.html' as alert %} {% import './button.html' as button %} {% block content %} {{
+navbar.detailPages('My Donation', 'home.html') }}
+<div class="container box-content">
+    <h5 class="fs-5 border-bottom pb-2 mt-7">Donation History</h5>
+  {{ card.donateCollection('Wade Warren cheerful smile was snatched away by a leaky', '31,840', '10 August 2022' ,'./assets/images/picture-2.webp') }} 
+  {{ card.donateEvent('William Berghan', '1,00', '9 August 2022', './assets/images/picture-1.webp' ) }} 
+  {{ card.donateCollection('Wade Warren cheerful smile was snatched away by a leaky', '1,00', '8 August 2022' ,'./assets/images/picture-2.webp') }} 
+  {{ button.more()}}
+
+  <!-- No Event Section -->
+  <div class="mt-7 text-center">
+    <img src="./assets/images/image-no-notification.webp" alt="images no event" />
+    <h6 class="fs-6 mt-3">You haven’t made a donation yet</h6>
+    <a href="event.html" class="btn btn-dark w-100 w-lg-50 mt-6">Donation now</a>
+  </div>
+</div>
+
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {});
+</script>
+{% endblock %}
