@@ -24,10 +24,10 @@ $grays: (
 $primary1: #E4B19C;
 $primary2: #F4DED1;
 $primary4: #617E7A;
-$green: #23AC00;
+$green: #198754;
 $cyan: #4D69FF;
 $yellow: #FAD200;
-$red: #F04848;
+$red: #F04848; 
 
 $primary:       $primary1;
 $secondary:     $gray-600;
@@ -51,6 +51,8 @@ $theme-colors: (
   "dark":       $dark,
 );
 
+//Badge
+$badge-font-weight:  400;
 
 //Border 
 $border-color: $gray-900;

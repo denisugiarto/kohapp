@@ -2,7 +2,7 @@
     border-bottom: 1px solid $gray-900;
 }
 
-.nav-item {
+.nav-item:not(:last-child) {
     margin-right: 30px;
 }
 

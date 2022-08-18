@@ -1,0 +1,75 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Edit Event
+Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content %} {{
+navbar.detailPages('Edit Event', 'myevent.html') }}
+<div class="container box-content">
+  <div class="mt-7">
+    {{ alert.success('Event successfully published') }}
+    {{ alert.danger('Title is required') }}
+  </div>
+  <form>
+    <div class="mt-4">
+      <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
+      <input type="text" class="form-control" placeholder="Input title" value="William Berghan" />
+    </div>
+    <div class="mt-7">
+      <label class="form-label">Hero Image</label>
+      <input
+        id="hero-image"
+        name="hero-image"
+        type="file"
+        accept="image/*"
+        class="d-none"
+        onchange="thumbnail(event)"
+      />
+      <label for="hero-image" class="box-hero-image border-0"><img src="./assets/images/picture-1.webp" alt="Uploaded image" class="hero-image-wrapper" /></label>
+      <p class="mt-2">Max image size 3Mb</p>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Specify the donation period</label>
+      <div class="position-relative">
+        <input id="date" type="date" name="date" class="form-control ps-6" placeholder="Select your date" value="18-08-2022 to 25-08-2022" />
+        <div class="position-absolute top-50 start-0 translate-middle ms-3"><i class="fas fa-calendar"></i></div>
+      </div>
+    </div>
+    <div class="mt-7">
+      <label for="" class="form-label">Tell your story</label>
+      <input id="x" type="hidden" name="content" />
+      <div class="border border-dark p-1 rounded">
+        <trix-editor >Rest in peace</trix-editor>
+      </div>
+    </div>
+    <div class="mt-7">
+      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 " disabled>Save Event</button>
+      <button type="submit" class="btn btn-outline-dark col-12 col-sm-auto mt-6 mt-sm-0" disabled>Cancel</button>
+    </div>
+  </form>
+</div>
+{% endblock %} {% block script %}
+<script>
+  flatpickr('#date', {
+    mode: 'range',
+    minDate: 'today',
+    dateFormat: 'd-m-Y',
+  });
+
+  document.getElementById('date').setAttribute('value', '18-08-2022 to 25-08-2022');
+
+  function thumbnail(event) {
+    let file = event.target.files[0];
+    let imgUrl = URL.createObjectURL(file);
+    console.log(imgUrl);
+
+    $('label.box-hero-image').addClass('border-0').html(`
+    <img src="${imgUrl}" alt="Uploaded image" class="hero-image-wrapper" />
+    `);
+  }
+  $(document).change(function () {
+    $('button:submit').attr('disabled', false);
+    $('button:submit')
+      .filter(function () {
+        return $(this).text() === 'Save as Draft';
+      })
+      .attr('disabled', false);
+  });
+</script>
+{% endblock %}

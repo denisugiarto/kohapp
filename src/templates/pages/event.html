@@ -1,5 +1,5 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event Page'
-%} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %}
+%} {% import './navbar.html' as navbar %} {% import './card.html' as card %} {% import './button.html' as button %} {% block content %}
 {{ navbar.pages() }}
 <div class="container box-content">
   <h1 class="page-title my-7">Kohapp Event</h1>
@@ -9,8 +9,7 @@
   </div>
   {{ card.event('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp') }} {{ card.collection() }} {{
   card.event('Jenny Wilson', 'Aug 03 - Aug 10', './assets/images/picture-3.webp') }}
-
-  <a href="" role="button" class="flex-center fw-semibold mt-7">Show more<i class="fas fa-angle-down ms-2"></i></a>
+    {{ button.more() }}
 </div>
 {% endblock %} {% block script %}
 <script>
