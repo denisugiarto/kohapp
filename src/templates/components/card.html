@@ -29,7 +29,7 @@
       Wade Warren cheerful smile was snatched away by a leaky
     </h3>
     <h6 class="fs-6 mb-4"><i class="fas fa-tag me-1"></i>Collection</h6>
-    <p class="mb-4">$31,840 <span class="text-secondary">collectted of $100,000 goal</span></p>
+    <h6 class="mb-4">$31,840 <span class="text-secondary fw-normal">collectted of $100,000 goal</span></h6>
     <div class="row gy-3 gx-md-4">
       <div class="col-12 col-md-6 col-lg-auto">
         <a role="button" href="collection-koha.html" class="w-100 btn btn-dark btn-lg">Koha</a>
@@ -77,28 +77,26 @@
 {% endmacro %}
 
 <!-- Card My Collection -->
-{% macro myCollection() %}
-<div class="d-flex flex-column-reverse flex-md-row border-bottom border-dark mt-6 gap-4">
+{% macro myCollection(name, imgUrl, status, color) %}
+<div class="d-flex flex-column-reverse flex-lg-row border-bottom pb-3 border-dark mt-6 gap-4">
   <div class="col">
-    <h3 class="collection-title mb-4" title="Wade Warren cheerful smile was snatched away by a leaky">
-      Wade Warren cheerful smile was snatched away by a leaky
-    </h3>
+    <h3 class="collection-title mb-4">{{ name }}</h3>
     <div class="d-flex align-items-center mb-4">
       <h6 class="fs-6"><i class="fas fa-tag me-1"></i>Collection</h6>
-      <div class="badge rounded-pill bg-info ms-2">Pending</div>
+      <div class="badge rounded-pill bg-{{ color }} ms-2">{{ status | capitalize }}</div>
     </div>
-    <p class="mb-4">$31,840 <span class="text-secondary">collectted of $100,000 goal</span></p>
+    <h6 class="mb-4">$31,840 <span class="text-secondary fw-normal">collectted of $100,000 goal</span></h6>
     <div class="mb-4">
-      <a role="button" href="myevent-manage.html" class="fw-semibold"
+      <a role="button" href="collect-manage.html" class="fw-semibold"
         ><i class="fas fa-bars-progress me-1"></i>Manage</a
       >
-      <a role="button" href="edit-collection.html" class="fw-semibold ms-3"
+      <a role="button" href="edit-collect.html" class="fw-semibold ms-3"
         ><i class="fas fa-pen-to-square me-1"></i>Edit</a
       >
     </div>
   </div>
   <div class="col-auto">
-    <img src="./assets/images/picture-2.webp" class="box-image-event" alt="profile" />
+    <img src="{{ imgUrl }}" class="box-image-event" alt="profile" />
   </div>
 </div>
 {% endmacro %}
@@ -113,16 +111,32 @@
       <h6 class="fs-6"><i class="fas fa-tag me-1"></i>Event</h6>
       <div class="badge rounded-pill bg-{{ color }} ms-2">{{ status | capitalize }}</div>
     </div>
-    <div class="row g-3 mb-6">
-      <div class="col-auto">
-        <h5 class="fs-5">$31,840<span class="fs-6 text-secondary ms-1">collected</span></h5>
-      </div>
-      <div class="col">
-        <h5 class="fs-5">10<span class="fs-6 text-secondary ms-1">donations</span></h5>
-      </div>
-    </div>
+    <p class="mb-6">Last modified 2 hours ago</p>
     <div class="mb-4">
       <a role="button" href="edit-event.html" class="fw-semibold"><i class="fas fa-pen-to-square me-1"></i>Edit</a>
+      <a role="button" data-bs-target="#deleteEventModal" data-bs-toggle="modal" class="fw-semibold ms-3"
+        ><i class="fas fa-trash-alt me-1"></i>Delete</a
+      >
+    </div>
+  </div>
+  <div class="col-auto">
+    <img src="{{ imgUrl }}" class="box-image-event" alt="profile" />
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Card Draft Collect -->
+{% macro collectDraft(name, imgUrl, status, color) %}
+<div class="d-flex flex-column-reverse flex-lg-row border-bottom border-dark mt-6 gap-4">
+  <div class="col">
+    <h3 class="fs-3 mb-4">{{ name }}</h3>
+    <div class="d-flex align-items-center mb-4">
+      <h6 class="fs-6"><i class="fas fa-tag me-1"></i>Collection</h6>
+      <div class="badge rounded-pill bg-{{ color }} ms-2">{{ status | capitalize }}</div>
+    </div>
+    <p class="mb-6">Last modified 2 hours ago</p>
+    <div class="mb-4">
+      <a role="button" href="edit-collect.html" class="fw-semibold"><i class="fas fa-pen-to-square me-1"></i>Edit</a>
       <a role="button" data-bs-target="#deleteEventModal" data-bs-toggle="modal" class="fw-semibold ms-3"
         ><i class="fas fa-trash-alt me-1"></i>Delete</a
       >
@@ -141,7 +155,7 @@
     <div class="box-avatar-image">{{ name | first }}</div>
   </div>
   <div class="col mt-0 mt-md-2 me-md-6">
-    <h4 class="fs-4">{{ name }}</h4>
+    <h4 class="fs-5">{{ name }}</h4>
     <p class="text-secondary">Give donation ${{ donation }}</p>
     <p class="fs-6 mt-3">
       Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
@@ -162,7 +176,7 @@
   <div class="col">
     <div class="row gx-2">
       <div class="col mt-0 mt-md-2 me-md-6">
-        <h4 class="fs-4">{{ name }}</h4>
+        <h4 class="fs-5">{{ name }}</h4>
         <p class="text-secondary">Give donation ${{ donation }}</p>
         <p class="fs-6 my-3">
           Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
@@ -196,7 +210,7 @@
     <div class="box-avatar-image">{{ name | first }}</div>
   </div>
   <div class="col mt-0 mt-md-2 me-md-6">
-    <h4 class="fs-4">{{ name }}</h4>
+    <h4 class="fs-5">{{ name }}</h4>
     <p class="text-secondary">Give donation ${{ donation }}</p>
     <video src="./assets/videos/sad videos.mp4" class="rounded img-fluid mt-3" controls></video>
     <p class="fs-6 mt-3">
@@ -218,7 +232,7 @@
   <div class="col mt-0 mt-md-2 me-md-6">
     <div class="row gx-2">
       <div class="col">
-        <h4 class="fs-4">{{ name }}</h4>
+        <h4 class="fs-5">{{ name }}</h4>
         <p class="text-secondary">Give donation ${{ donation }}</p>
         <video src="./assets/videos/sad videos.mp4" class="rounded img-fluid mt-3" controls></video>
         <p class="fs-6 my-3">

@@ -192,6 +192,7 @@ body {
 .page-title {
   @extend .fs-4;
   @extend .fs-md-2;
+  @extend .text-center;
 }
 
 .pointer {

@@ -1,4 +1,4 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Collection
 Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %} {{
 navbar.detailPages('Kohapp', 'event.html') }}
 <div class="container box-content">
@@ -7,14 +7,14 @@ navbar.detailPages('Kohapp', 'event.html') }}
     <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Collection</h6>
   </div>
   <img src="./assets/images/picture-2.webp" alt="picture" class="img-fluid rounded mt-6" />
-  <p class="mt-4"><u>Post by Calib Jackson</u></p>
+  <p class="mt-4 text-end"><u>Post by Calib Jackson</u></p>
   <h6 class="fs-6 mt-6">$31,840 <span class="text-secondary fw-normal">collectted of $100,000 goal</span></h6>
   <p class="mt-6">
     Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
     me mahi ma tenei paltform.
   </p>
   <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button" >Koha</a>
-  <h5 class="fs-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
+  <h5 class="fs-5 fs-md-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
   {{ card.message('Mirjan Prenga', '5.00')}}
   {{ card.message('Esther Howard', '5.00')}}
   {{ card.message('Jenny Wilson', '5.00')}}

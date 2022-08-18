@@ -1,7 +1,7 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event Page'
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Collect Page'
 %} {% import './navbar.html' as navbar %} {% import './card.html' as card %} {% import
 './modal.html' as modal %} {% import './alert.html' as alert %} {% import './button.html' as button %} {% block content %} {{
-navbar.detailPages('My Event', 'home.html') }}
+navbar.detailPages('Collect', 'home.html') }}
 <div class="container box-content">
   <ul class="nav nav-tabs mt-7" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
@@ -15,7 +15,7 @@ navbar.detailPages('My Event', 'home.html') }}
         aria-controls="all-event"
         aria-selected="true"
       >
-        All Event
+        All Collect
       </button>
     </li>
     <li class="nav-item" role="presentation">
@@ -36,29 +36,29 @@ navbar.detailPages('My Event', 'home.html') }}
       <a
         class="nav-link active"
         role="button"
-        href="create-event.html"
+        href="start-collection.html"
       >
-      <i class="fas fa-plus"></i> Create Event
+      <i class="fas fa-plus"></i> Start Collect
       </a>
     </li>
   </ul>
   <div class="tab-content">
     <div class="tab-pane fade show active" id="all-event" role="tabpanel" aria-labelledby="all-event-tab">
       <div class="mt-3">{{ alert.success('1 event successfully deleted') }}</div>
-      {{ card.myEvent('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp', 'success', 'success') }}
-      {{ card.myEvent('Wade Warren', 'Aug 03 - Aug 10', './assets/images/picture-2.webp', 'pending', 'info') }} {{
-      card.myEvent('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp', 'reject', 'danger') }}
+      {{ card.myCollection('Wade Warren cheerful smile was snatched away by a leaky', './assets/images/picture-1.webp', 'success', 'success') }}
+      {{ card.myCollection('Wade Warren cheerful smile was snatched away by a leaky', './assets/images/picture-2.webp', 'pending', 'info') }} {{
+      card.myCollection('Wade Warren cheerful smile was snatched away by a leaky', './assets/images/picture-1.webp', 'reject', 'danger') }}
       {{ button.more()}}
       
       <!-- No Event Section -->
       <div class="mt-7 text-center">
         <img src="./assets/images/image-no-notification.webp" alt="images no event" />
         <h6 class="fs-6 mt-3">No events created yet</h6>
-        <a href="create-event.html" class="btn btn-dark mt-6">Create an Event now</a>
+        <a href="create-event.html" class="btn btn-dark mt-6">Start Collect now</a>
       </div>
     </div>
     <div class="tab-pane fade" id="draft" role="tabpanel" aria-labelledby="draft-tab">
-      {{ card.eventDraft('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp', 'pending', 'info') }}
+      {{ card.collectDraft('Wade Warren cheerful smile was snatched away by a leaky', './assets/images/picture-1.webp', 'pending', 'info') }}
     </div>
   </div>
 
@@ -67,12 +67,13 @@ navbar.detailPages('My Event', 'home.html') }}
 </div>
 <!-- Button Create New Event -->
 <div class="fixed-btn">
-  <a href="create-event.html" role="button" class="d-block d-md-none btn btn-dark w-100"><i class="fas fa-plus me-1"></i>Create Event</a>
+  <a href="create-event.html" role="button" class="d-block d-md-none btn btn-dark w-100"><i class="fas fa-plus me-1"></i>Start Collect</a>
 </div>
 
 {{ modal.delete('Event', 'this event')}} {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
+    $('.navigation-item > h6:contains("Collect")').parent().addClass('active');
   });
 </script>
 {% endblock %}

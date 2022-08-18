@@ -1,0 +1,43 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Manage Event
+Page' %} {% import './navbar.html' as navbar %} {% import './modal.html' as modal %} {% import './button.html' as button %} {% import './card.html' as card %} {% block content %} {{
+navbar.detailPages('Manage', 'myevent.html') }}
+<div class="container box-content">
+  <div class="d-flex mt-7 gap-5">
+    <h2 class="fs-md-3 fs-5 lh-base">Tangihanga <br> William Berghan</h2>
+    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Event</h6>
+  </div>
+  <img src="./assets/images/picture-2.webp" alt="picture" class="img-fluid rounded mt-6" />
+  <div class="d-flex mt-3 flex-wrap gap-3">
+      <h6 class="fs-6">$31,840 <span class="text-secondary fw-normal">collectted of $100,000 goal</span></h6>
+      <h6 class="fs-6 ">10 <span class="text-secondary fw-normal">donations</span></h6>
+  </div>
+  <p class="mt-6">
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
+    me mahi ma tenei paltform.
+  </p>
+  <h5 class="fs-5 fs-md-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
+  {{ card.messageReply('Mirjan Prenga', '5.00', 'reply1', 'show')}}
+  {{ card.messageReply('Esther Howard', '5.00', 'reply2')}}
+  {{ card.messageReply('Jenny Wilson', '5.00', 'reply3')}}
+  {{ card.messageReplyWithVideo('Robert Fox', '5.00', 'reply4')}}
+  {{ button.more() }}
+  <div class="d-flex mt-7 border-bottom pb-3">
+    <div class="col">
+        <h2 class="fs-3">Delete my collect</h2>
+        <p class="mt-2">You will no longer have access to this collect after deleting.</p>
+    </div>
+    <div class="col-auto">
+        <a data-bs-toggle="modal" data-bs-target="#deleteEventModal" class="btn btn-outline-danger" role="button">Delete Collect</a>
+    </div>
+  </div>
+</div>
+{{ modal.delete('Event', 'this event', 'collect.html')}}
+{% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+  });
+
+</script>
+{% endblock %}
+
+<a role="button" data-bs-target="#deleteEventModal" data-bs-toggle="modal" class="fw-semibold ms-3"><i class="fas fa-trash-alt me-2"></i>Delete</a>

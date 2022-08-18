@@ -1,6 +1,6 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Start
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Edit
 Collect Page' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import '../components/alert.html' as alert %} {% block content
-%} {{ navbar.detailPages('Start Collect', 'home.html') }}
+%} {{ navbar.detailPages('Edit Collect', 'home.html') }}
 <div class="container box-content">
   <div class="mt-7">
     {{ alert.success('Collection successfully published') }}
@@ -9,13 +9,13 @@ Collect Page' %} {% import './navbar.html' as navbar %} {% import '../components
   <form>
     <div class="mt-4">
       <label for="" class="form-label">Title<span class="text-danger">*</span> </label>
-      <input type="text" class="form-control" placeholder="Input title collect" />
+      <input type="text" class="form-control" placeholder="Input title collect" value="Wade Warren cheerful smile was snatched away by a leaky" />
     </div>
     <div class="mt-7">
       <label for="" class="form-label">Enter your goal here<span class="text-danger">*</span> </label>
       <div class="position-relative">
         <div class="position-absolute top-50 start-0 translate-middle ms-5 fw-bold">$</div>
-        <input type="number" class="form-control fw-bold ps-6" min="0.01" step="0.01" max="2500.00" value="0.00" />
+        <input type="number" class="form-control fw-bold ps-6" min="0.01" step="0.01" max="1000000.00" value="1000000.00" />
       </div>
     </div>
     <div class="mt-7">
@@ -28,19 +28,21 @@ Collect Page' %} {% import './navbar.html' as navbar %} {% import '../components
         class="d-none"
         onchange="thumbnail(event)"
       />
-      <label for="hero-image" class="box-hero-image"><i class="fas fa-plus fs-1"></i></label>
+      <label for="hero-image" class="box-hero-image border-0">
+        <img src="./assets/images/picture-2.webp" alt="Uploaded image" class="hero-image-wrapper" />
+      </label>
       <p class="mt-2">Max image size 3Mb</p>
     </div>
     <div class="mt-7">
       <label for="" class="form-label">Tell your story</label>
       <input id="x" type="hidden" name="content" />
       <div class="border border-dark p-1 rounded">
-        <trix-editor input="x"></trix-editor>
+        <trix-editor input="x">Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha me mahi ma tenei paltform.</trix-editor>
       </div>
     </div>
     <div class="mt-7">
-      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6" disabled>Start Collect</button>
-      <button type="submit" class="btn btn-outline-dark px-6 col-12 col-sm-auto mt-6 mt-sm-0" disabled>Save as Draft</button>
+      <button type="submit" class="btn btn-dark col-12 col-sm-auto me-6 px-6">Save</button>
+      <button type="submit" class="btn btn-outline-dark px-6 col-12 col-sm-auto mt-6 mt-sm-0">Cancel</button>
     </div>
   </form>
 </div>
