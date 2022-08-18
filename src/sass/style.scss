@@ -78,6 +78,20 @@ body {
   }
 }
 
+.box-avatar-image {
+  @extend .bg-primary4;
+  @extend .rounded-circle;
+  @extend .icon ;
+  @extend .icon-lg;
+  font-size: 1rem;
+  
+  @include media-breakpoint-up('md') {
+    font-size: 24px;
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .box-bottom-navigation {
   @extend .fixed-bottom;
   @extend .border-top;
@@ -114,9 +128,8 @@ body {
   object-fit: cover;
   object-position: top;
 
-  @include media-breakpoint-up('md') {
-    width: 260px;
-    height: 208px;
+  @include media-breakpoint-up('lg') {
+    height: 200px;;
   }
 }
 
@@ -136,6 +149,12 @@ body {
   @include media-breakpoint-down(lg) {
     max-width: 100vw;
   }
+}
+
+.fixed-btn {
+  @extend .fixed-bottom;
+  @extend .px-3;
+  bottom: 95px;
 }
 
 .flex-center {

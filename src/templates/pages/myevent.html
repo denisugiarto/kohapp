@@ -32,7 +32,7 @@ navbar.detailPages('My Event', 'home.html') }}
         Draft(1)
       </button>
     </li>
-    <li class="nav-item ms-auto" role="presentation">
+    <li class="d-none d-md-block nav-item ms-auto" role="presentation">
       <a
         class="nav-link active"
         role="button"
@@ -61,6 +61,13 @@ navbar.detailPages('My Event', 'home.html') }}
       {{ card.eventDraft('William Berghan', 'Aug 03 - Aug 10', './assets/images/picture-1.webp') }}
     </div>
   </div>
+
+  <!-- Margin top for mobile view -->
+  <div class="mt-7 mt-md-0"></div>
+</div>
+<!-- Button Create New Event -->
+<div class="fixed-btn">
+  <a href="create-event.html" role="button" class="d-block d-md-none btn btn-dark w-100"><i class="fas fa-plus me-1"></i>Create Event</a>
 </div>
 
 {{ modal.delete('Event', 'this event')}} {% endblock %} {% block script %}
