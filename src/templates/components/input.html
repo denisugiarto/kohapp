@@ -56,7 +56,25 @@
     value="{{ value }}"
     required
   />
-  <div class="invalid-feedback">Type your {{ placeholder | lower }}</div>
-  <a role="button" class="show-password position-absolute start-100 top-0 mt-4 ms-n7"><i class="fas fa-eye-slash"></i></a>
+  <div class="invalid-feedback">Please enter a valid password of at least 6 characters </div>
+  <a role="button" class="show-password position-absolute start-100 top-0 mt-3 ms-n7"><i class="fas fa-eye-slash"></i></a>
+</div>
+{% endmacro %}
+
+<!-- Input Password with desc -->
+{% macro passwordWithDesc( name, label, placeholder, value ) %}
+<label for="{{ name }}" class="form-label">{{ label }}</label>
+<div class="position-relative">
+  <input
+    name="{{ name }}"
+    class="form-control"
+    type="password"
+    placeholder="Enter {{ placeholder | lower }}"
+    value="{{ value }}"
+    required
+  />
+  <p class="mt-1 fs-7">Your password must be at least 6 characters</p>
+  <div class="invalid-feedback">Please enter a valid password of at least 6 characters</div>
+  <a role="button" class="show-password position-absolute start-100 top-0 mt-3 ms-n7"><i class="fas fa-eye-slash"></i></a>
 </div>
 {% endmacro %}
