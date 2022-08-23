@@ -1,9 +1,9 @@
-{% extends '../components/layout-no-navbar.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle =
+{% extends '../components/layout-no-navbar.html' %} {% set cssFiles = './assets/css/style.css' %} {% import './input.html' as input %} {% set pageTitle =
 'Sign In Page' %} {% block content %}
 
 <div class="container box-content px-md-7 px-lg-8">
   <div class="mt-4">
-    <h1 class="fs-2 mb-6">Welcome to kohapp</h1>
+    <h1 class="page-title mb-6">Welcome to kohapp</h1>
     <form class="row g-3 needs-validation" novalidate>
       <div class="mb-2">
         <label class="form-label" for="email">Email</label>
@@ -11,22 +11,7 @@
         <div class="invalid-feedback">This email address looks wrong</div>
       </div>
       <div class="mb-2">
-        <label class="form-label" for="password">Password</label>
-        <div class="input-group position-relative">
-          <input
-            class="form-control rounded"
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Enter your password"
-            required
-          />
-
-          <div class="invalid-feedback">All passwords must be at least 6 characters</div>
-          <a role="button" class="position-absolute top-0 end-0 translate-middle mt-6 me-2 show_hide_password">
-            <i class="fa-solid fa-eye-slash"></i>
-          </a>
-        </div>
+        {{ input.password('password', 'Password', 'your password') }}
       </div>
       <div class="d-flex justify-content-between">
         <div class="d-flex align-items-center">
@@ -58,15 +43,7 @@
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
-    $('.show_hide_password').click(function () {
-      if ($(this).html() == '<i class="fa-solid fa-eye-slash"></i>') {
-        $('.input-group > .form-control[name="password"]').attr('type', 'text');
-        $(this).html('<i class="fa-solid fa-eye"></i>');
-      } else {
-        $('.input-group > .form-control[name="password"]').attr('type', 'password');
-        $(this).html('<i class="fa-solid fa-eye-slash"></i>');
-      }
-    });
+
   });
 </script>
 

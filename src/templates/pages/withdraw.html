@@ -1,0 +1,58 @@
+{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Withdraw
+Page' %} {% import './navbar.html' as navbar %} {% import './input.html' as input %} {% import
+'../components/modal.html' as modal %} {% block content %} {{ navbar.detailPages('Withdraw', 'home.html') }}
+<div class="container box-content">
+  <h5 class="fs-5 mt-7">Bank Account Information</h5>
+  <h6 class="fs-6 mt-3">Cameron Williamson</h6>
+  <p class="fs-6 mt-1">Akahu Account <span class="ms-3">2359</span></p>
+  <hr />
+  <h5 class="fs-5 mt-6">Avaliable Balance</h5>
+  <h5 class="fs-5 mt-2">$40.00</h5>
+  <h5 class="fs-5 mt-7">Withdrawal Amount</h5>
+  <div class="form-check mt-2">
+    <input class="form-check-input" name="amount" type="radio" id="valued" value="40" checked />
+    <label class="form-check-label fw-semibold" for="valued">$40.00</label>
+  </div>
+  <div class="form-check mt-2">
+    <input class="form-check-input" name="amount" type="radio" id="otherAmount" />
+    <label class="form-check-label fw-semibold" for="otherAmount">Other amount</label>
+  </div>
+  <div id="otherAmountForm" class="collapse fade mt-2 ms-5">
+    <p class="fs-7">Number of withdrawal request</p>
+    <input type="number" class="form-control" step="0.01" placeholder="Enter the amount to be withdraw" />
+  </div>
+  <hr />
+  <div class="d-flex align-items-center mt-6">
+    <h5 class="fs-5">Total Withdraw</h5>
+    <div class="totalWithdraw ms-auto fs-3 fw-semibold">$40.00</div>
+  </div>
+  <hr />
+  <a data-bs-toggle="modal" data-bs-target="#confirmModal" role="button" class="col-12 col-sm-auto btn btn-dark mt-7">
+    Confirm & Withdraw
+  </a>
+</div>
+{{ modal.confirm('home.html') }} {% endblock %} {% block script %}
+<script>
+  $(document).ready(function () {
+    flatpickr('#date', {
+      mode: 'range',
+      minDate: 'today',
+      dateFormat: 'd-m-Y',
+    });
+
+    $("input[type=number]").keyup(function () {
+        let value = $(this).val();
+        $('.totalWithdraw').text(`$${value}`)
+    })
+  });
+
+  $(document).change(function () {
+    //detect checked Other Amount option
+    if ($('#otherAmount').is(':checked')) {
+      $('#otherAmountForm').addClass('show active');
+    } else {
+      $('#otherAmountForm').removeClass('show active');
+    }
+  });
+</script>
+{% endblock %}

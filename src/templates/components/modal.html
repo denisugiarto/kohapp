@@ -2,7 +2,7 @@
 {% macro delete(id, message, link) %}
 <div class="modal fade" id="delete{{ id }}Modal" tabindex="-1" aria-labelledby="{{ id }}ModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">      
+    <div class="modal-content">
       <div class="modal-header text-start">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -18,6 +18,26 @@
             <a href="{{ link }}" id="delete{{ id }}Button" role="button" class="btn btn-dark"> Delete </a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+<!-- Modal Confirm -->
+{% macro confirm(link) %}
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="ConfirmModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-start">
+        <h5 class="fs-5">Confirm Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input class="form-control" type="password" placeholder="Enter your account password" />
+      </div>
+      <div class="modal-footer">
+        <a href="{{ link }}" id="deleteButton" role="button" class="btn btn-dark ms-auto">Confirm</a>
       </div>
     </div>
   </div>

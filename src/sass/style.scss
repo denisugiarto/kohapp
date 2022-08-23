@@ -27,7 +27,7 @@ a {
   box-sizing: border-box;
 }
 
-p {
+p, dl, ol, ul {
   margin-bottom: 0;
 }
 
@@ -192,7 +192,8 @@ body {
 
 .page-title {
   @extend .fs-4;
-  @extend .fs-md-2;
+  @extend .fs-md-3;
+  @extend .fs-xl-2;
   @extend .text-center;
 }
 
