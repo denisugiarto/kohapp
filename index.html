@@ -23,7 +23,7 @@
       <div class="bg-skew"></div>
       
 <div class="container box-content">
-  <h1 class="fs-1">Welcome to kohapp</h1>
+  <h1 class="page-title">Welcome to kohapp</h1>
   <h5 class="fs-5 mt-5 mb-1">All Roles</h5>
   <div class="nav flex-column ms-3 gap-1">
     <a href="signin.html">Sign In</a>
@@ -105,6 +105,21 @@
   referrerpolicy="no-referrer"
 ></script>
   
+    <script>
+      $('.show-password').click(function () {
+        if ($(this).children().hasClass('fa-eye')) {
+          //change icon
+          $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+          //change inputt type to text
+          $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+        } else {
+          //change icon
+          $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+          //change inputt type to text
+          $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+        }
+      });
+    </script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {

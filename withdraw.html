@@ -40,7 +40,7 @@ Page</title>
   <h5 class="fs-5 mt-2">$40.00</h5>
   <h5 class="fs-5 mt-7">Withdrawal Amount</h5>
   <div class="form-check mt-2">
-    <input class="form-check-input" name="amount" type="radio" id="valued" checked />
+    <input class="form-check-input" name="amount" type="radio" id="valued" value="40" checked />
     <label class="form-check-label fw-semibold" for="valued">$40.00</label>
   </div>
   <div class="form-check mt-2">
@@ -49,15 +49,15 @@ Page</title>
   </div>
   <div id="otherAmountForm" class="collapse fade mt-2 ms-5">
     <p class="fs-7">Number of withdrawal request</p>
-    <input type="number" class="form-control" placeholder="Enter the amount to be withdraw" />
+    <input type="number" class="form-control" step="0.01" placeholder="Enter the amount to be withdraw" />
   </div>
   <hr />
   <div class="d-flex align-items-center mt-6">
     <h5 class="fs-5">Total Withdraw</h5>
-    <div class="ms-auto fs-3 fw-semibold">$40.00</div>
+    <div class="totalWithdraw ms-auto fs-3 fw-semibold">$40.00</div>
   </div>
   <hr />
-  <a data-bs-toggle="modal" data-bs-target="#confirmModal" role="button" class="btn btn-dark mt-7">
+  <a data-bs-toggle="modal" data-bs-target="#confirmModal" role="button" class="col-12 col-sm-auto btn btn-dark mt-7">
     Confirm & Withdraw
   </a>
 </div>
@@ -129,6 +129,11 @@ Page</title>
       minDate: 'today',
       dateFormat: 'd-m-Y',
     });
+
+    $("input[type=number]").keyup(function () {
+        let value = $(this).val();
+        $('.totalWithdraw').text(`$${value}`)
+    })
   });
 
   $(document).change(function () {
@@ -141,6 +146,21 @@ Page</title>
   });
 </script>
 
+    <script>
+      $('.show-password').click(function () {
+        if ($(this).children().hasClass('fa-eye')) {
+          //change icon
+          $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+          //change inputt type to text
+          $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+        } else {
+          //change icon
+          $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+          //change inputt type to text
+          $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+        }
+      });
+    </script>
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
