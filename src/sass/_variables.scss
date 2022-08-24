@@ -37,17 +37,19 @@ $warning:       $yellow;
 $danger:        $red;
 $light:         $gray-100;
 $dark:          $gray-900;
+$light-gray:    $gray-700;
 
 $theme-colors: (
   "primary":    $primary,
-  "primary2":    $primary2,
-  "primary4":    $primary4,
+  "primary2":   $primary2,
+  "primary4":   $primary4,
   "secondary":  $secondary,
   "success":    $success,
   "info":       $info,
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
+  "light-gray": $light-gray,
   "dark":       $dark,
 );
 
