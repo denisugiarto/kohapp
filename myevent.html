@@ -23,7 +23,7 @@
     <main class="bd-main vh-100">
       <div class="bg-skew"></div>
        
-<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+<nav class="navbar navbar-light border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
     <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
     <h1 class="navbar-brand text-center col">My Event</h1>
@@ -178,14 +178,8 @@
     </div>
     <div class="tab-pane fade" id="draft" role="tabpanel" aria-labelledby="draft-tab">
       
-<div class="d-flex flex-column-reverse flex-lg-row border-bottom border-dark mt-6 gap-4">
-  <div class="col">
-    <h5 class="fs-5 mb-3">Tangihanga</h5>
-    <h3 class="fs-3 mb-4">William Berghan</h3>
-    <div class="d-flex align-items-center mb-4">
-      <h6 class="fs-6"><i class="fas fa-tag me-1"></i>Event</h6>
-      <div class="badge rounded-pill bg-info ms-2">Pending</div>
-    </div>
+<div class="d-flex flex-column-reverse flex-lg-row border-bottom border-dark mt-4 mt-md-6 gap-4">
+  <div class="col">  
     <p class="mb-6">Last modified 2 hours ago</p>
     <div class="mb-4">
       <a role="button" href="edit-event.html" class="fw-semibold"><i class="fas fa-pen-to-square me-1"></i>Edit</a>
@@ -195,7 +189,12 @@
     </div>
   </div>
   <div class="col-auto">
-    <img src="./assets/images/picture-1.webp" class="box-image-event" alt="profile" />
+    <!-- <img src="./assets/images/picture-1.webp" class="box-image-event" alt="profile" /> -->
+    <!-- No Image -->
+    <div class="box-image-event bg-primary3 flex-center flex-column mb-lg-4">
+      <i class="fas fa-image d-block mb-4 fs-3"></i>
+      <p class="fw-semibold fs-7 fs-md-5">No Image Available</p>
+    </div>
   </div>
 </div>
 
@@ -233,8 +232,7 @@
     </div>
   </div>
 </div>
- 
-      
+  
 <div class="box-bottom-navigation">
   <div class="container">
     <div class="d-flex justify-content-between">
@@ -283,21 +281,28 @@
 </script>
 
     <script>
-      $('.show-password').click(function () {
-        if ($(this).children().hasClass('fa-eye')) {
-          //change icon
-          $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
-        } else {
-          //change icon
-          $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
-        }
+      $(document).ready(function () {
+        $('.show-password').click(function () {
+          if ($(this).children().hasClass('fa-eye')) {
+            //change icon
+            $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+          } else {
+            //change icon
+            $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+          }
+        });
       });
-    </script>
-    <script>
+
+      $(document).scroll(function () {
+        let $nav = $('.navbar.fixed-top');
+        $nav.toggleClass('scrolled', $(document).scrollTop() > $nav.height());
+        console.log('scroll position: ', $(document).scrollTop() )
+        console.log('height: ', $nav.height() )
+      });
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
         'use strict';

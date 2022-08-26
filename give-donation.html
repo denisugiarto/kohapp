@@ -24,7 +24,7 @@ Page</title>
     <main class="bd-main vh-100">
       <div class="bg-skew"></div>
        
-<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+<nav class="navbar navbar-light border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
     <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
     <h1 class="navbar-brand text-center col">Give Donation</h1>
@@ -87,8 +87,7 @@ Page</title>
     </div>
     <h6 class="fs-6 mt-5 text-center">Sorry, we couldn't any for this search.</h6>
 </div>
-
-      
+ 
 <div class="box-bottom-navigation">
   <div class="container">
     <div class="d-flex justify-content-between">
@@ -138,21 +137,28 @@ Page</title>
 </script>
 
     <script>
-      $('.show-password').click(function () {
-        if ($(this).children().hasClass('fa-eye')) {
-          //change icon
-          $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
-        } else {
-          //change icon
-          $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
-        }
+      $(document).ready(function () {
+        $('.show-password').click(function () {
+          if ($(this).children().hasClass('fa-eye')) {
+            //change icon
+            $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+          } else {
+            //change icon
+            $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+          }
+        });
       });
-    </script>
-    <script>
+
+      $(document).scroll(function () {
+        let $nav = $('.navbar.fixed-top');
+        $nav.toggleClass('scrolled', $(document).scrollTop() > $nav.height());
+        console.log('scroll position: ', $(document).scrollTop() )
+        console.log('height: ', $nav.height() )
+      });
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
         'use strict';

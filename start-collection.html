@@ -24,7 +24,7 @@ Collect Page</title>
     <main class="bd-main vh-100">
       <div class="bg-skew"></div>
        
-<nav class="navbar navbar-light bg-primary border-bottom border-secondary fixed-top">
+<nav class="navbar navbar-light border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
     <a href="home.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
     <h1 class="navbar-brand text-center col">Start Collect</h1>
@@ -54,14 +54,7 @@ Collect Page</title>
       <input type="text" class="form-control" placeholder="Input title collect" />
     </div>
     <div class="mt-7">
-      <label for="" class="form-label">Enter your goal here<span class="text-danger">*</span> </label>
-      <div class="position-relative">
-        <div class="position-absolute top-50 start-0 translate-middle ms-5 fw-bold">$</div>
-        <input type="number" class="form-control fw-bold ps-6" min="0.01" step="0.01" max="2500.00" value="0.00" />
-      </div>
-    </div>
-    <div class="mt-7">
-      <label class="form-label">Hero Image</label>
+      <label class="form-label">Pikitia</label>
       <input
         id="hero-image"
         name="hero-image"
@@ -74,7 +67,7 @@ Collect Page</title>
       <p class="mt-2">Max image size 3Mb</p>
     </div>
     <div class="mt-7">
-      <label for="" class="form-label">Tell your story</label>
+      <label for="" class="form-label">Kōrero</label>
       <input id="x" type="hidden" name="content" />
       <div class="border border-dark p-1 rounded">
         <trix-editor input="x"></trix-editor>
@@ -86,8 +79,7 @@ Collect Page</title>
     </div>
   </form>
 </div>
-
-      
+ 
 <div class="box-bottom-navigation">
   <div class="container">
     <div class="d-flex justify-content-between">
@@ -151,21 +143,28 @@ Collect Page</title>
 </script>
 
     <script>
-      $('.show-password').click(function () {
-        if ($(this).children().hasClass('fa-eye')) {
-          //change icon
-          $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
-        } else {
-          //change icon
-          $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
-          //change inputt type to text
-          $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
-        }
+      $(document).ready(function () {
+        $('.show-password').click(function () {
+          if ($(this).children().hasClass('fa-eye')) {
+            //change icon
+            $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+          } else {
+            //change icon
+            $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+          }
+        });
       });
-    </script>
-    <script>
+
+      $(document).scroll(function () {
+        let $nav = $('.navbar.fixed-top');
+        $nav.toggleClass('scrolled', $(document).scrollTop() > $nav.height());
+        console.log('scroll position: ', $(document).scrollTop() )
+        console.log('height: ', $nav.height() )
+      });
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function () {
         'use strict';
