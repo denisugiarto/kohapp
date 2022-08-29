@@ -131,6 +131,13 @@ body {
   @include media-breakpoint-up('lg') {
     height: 200px;;
   }
+
+  &.no-image {
+    @extend .flex-center; 
+    @extend .flex-column;
+    @extend .mb-lg-4;
+    background-color: #fcf7f5;
+  }
 }
 
 .collection-title {
@@ -203,4 +210,18 @@ body {
 
 .show_hide_password {
   z-index: 1000;
+}
+
+//Make Input placeholder italic
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+:-moz-placeholder {
+  font-style: italic;  
+}
+::-moz-placeholder {
+  font-style: italic;  
+}
+:-ms-input-placeholder {  
+  font-style: italic; 
 }

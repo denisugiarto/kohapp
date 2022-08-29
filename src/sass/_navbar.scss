@@ -8,3 +8,8 @@
   width: 1.5rem;
   height: 1.5rem;
 }
+
+.navbar.fixed-top.scrolled {
+  @extend .bg-primary;
+  transition: background-color 0.2s linear;
+}
