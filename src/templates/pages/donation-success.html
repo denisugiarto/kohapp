@@ -2,15 +2,39 @@
 Success' %} {% import './navbar.html' as navbar %} {% block content %} {{ navbar.detailPages('Kohapp', 'home.html') }}
 <div class="container box-content">
   <div class="flex-center flex-column mt-7 mt-md-8">
-    <img src="./assets/images/image-success-donation.webp" alt="illustraton success donation" class="mb-6" />
+    <img
+      src="./assets/images/image-success-donation.webp"
+      alt="illustraton success donation"
+      class="illustration-img mb-6"
+    />
     <h5 class="fs-5 mb-6">Kia Ora! A Koha of 1100.00 has been made.</h5>
-    <a role="button" href="home.html" class="btn btn-dark col-12 col-sm-6">Back To Home</a>
+    <a role="button" href="mydonation.html" class="btn btn-dark col-12 col-sm-6">See My Donation</a>
   </div>
 </div>
+<div id="modalAds" class="modal fade" data-bs-backdrop="static">
+  <div class="modal-dialog modal-lg modal-dialog-centered mw-fit bg-transparent px-2 px-md-4 px-lg-0">
+    <div class="modal-content position-relative">
+      <div class="position-absolute top-0 start-100 translate-middle">
+        <button
+          type="button"
+          class="rounded-circle bg-black text-white icon icon-md"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+      <a href="" role="button">
+        <img src="./assets/images/image-ads.webp" class="ads-img" alt="ads" />
+      </a>
+    </div>
+  </div>
+</div>
+
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
-    // $('.navigation-item > h6:contains("Events")').parent().addClass('active');
+    $('#modalAds').modal('show');
   });
 </script>
 {% endblock %}

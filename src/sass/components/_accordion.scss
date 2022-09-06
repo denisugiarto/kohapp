@@ -1,0 +1,16 @@
+.accordion-button {
+    @extend .fw-semibold;
+}
+
+.accordion-body {
+    color: $gray-900;
+    padding-bottom: 20px;
+}
+
+.accordion-item {
+    @extend .border-bottom;
+}
+
+.accordion-item:last-of-type {
+    border-radius: 0;
+}

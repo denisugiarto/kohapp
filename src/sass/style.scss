@@ -10,7 +10,8 @@
 //Bootstrap
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-@import 'font', 'nav', 'navbar', 'buttons', 'form-select', './components/icon', './components/bottom-navbar', './components/notification', './components/trix-editor', './components/scrollbar';
+@import 'font', 'nav', 'navbar', 'buttons', 'form-select', './components/accordion', './components/icon',
+  './components/bottom-navbar', './components/notification', './components/trix-editor', './components/scrollbar';
 
 html,
 body {
@@ -27,7 +28,10 @@ a {
   box-sizing: border-box;
 }
 
-p, dl, ol, ul {
+p,
+dl,
+ol,
+ul {
   margin-bottom: 0;
 }
 
@@ -50,10 +54,10 @@ body {
     }
   }
   .box-content {
-    transform: translateY(-346px);
+    transform: translateY(-320px);
     padding-bottom: 120px;
     @include media-breakpoint-up(xxl) {
-      transform: translateY(-432px);
+      transform: translateY(-420px);
     }
   }
 }
@@ -66,7 +70,7 @@ body {
   @extend .border-dark;
   @extend .border-dashed;
   @extend .icon;
-  @extend .icon-xxl; 
+  @extend .icon-xxl;
   @extend .rounded-circle;
 
   .image-wrapper {
@@ -81,10 +85,10 @@ body {
 .box-avatar-image {
   @extend .bg-primary4;
   @extend .rounded-circle;
-  @extend .icon ;
+  @extend .icon;
   @extend .icon-lg;
   font-size: 1rem;
-  
+
   @include media-breakpoint-up('md') {
     font-size: 24px;
     width: 64px;
@@ -102,11 +106,11 @@ body {
 }
 
 .box-hero-image {
-  @extend .border; 
-  @extend .border-dotted; 
-  @extend .border-dark; 
-  @extend .rounded; 
-  @extend .pointer; 
+  @extend .border;
+  @extend .border-dotted;
+  @extend .border-dark;
+  @extend .rounded;
+  @extend .pointer;
   @extend .border-2;
   @extend .flex-center;
 
@@ -114,7 +118,7 @@ body {
     width: 260px;
     height: 208px;
   }
-    
+
   .hero-image-wrapper {
     @extend .box-hero-image;
     @extend .img-fluid;
@@ -129,11 +133,11 @@ body {
   object-position: top;
 
   @include media-breakpoint-up('lg') {
-    height: 200px;;
+    height: 200px;
   }
 
   &.no-image {
-    @extend .flex-center; 
+    @extend .flex-center;
     @extend .flex-column;
     @extend .mb-lg-4;
     background-color: #fcf7f5;
@@ -193,8 +197,25 @@ body {
   width: 100%;
 }
 
+.ads-img {
+  @extend .rounded;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+  aspect-ratio: 21 / 9;
+}
+
+.illustration-img {
+  width: 130px;
+}
+
 .mh-200px {
-  max-height: 200px
+  max-height: 200px;
+}
+
+.navbar-brand {
+  @extend .text-wrap;
 }
 
 .page-title {
@@ -212,16 +233,20 @@ body {
   z-index: 1000;
 }
 
+.mw-fit {
+  max-width: fit-content;
+}
+
 //Make Input placeholder italic
 ::-webkit-input-placeholder {
   font-style: italic;
 }
 :-moz-placeholder {
-  font-style: italic;  
+  font-style: italic;
 }
 ::-moz-placeholder {
-  font-style: italic;  
+  font-style: italic;
 }
-:-ms-input-placeholder {  
-  font-style: italic; 
+:-ms-input-placeholder {
+  font-style: italic;
 }

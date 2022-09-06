@@ -55,6 +55,21 @@ $theme-colors: (
   "dark":       $dark,
 );
 
+//Accordion
+$accordion-button-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d='M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z'/></svg>");
+
+$accordion-button-active-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d='M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z'/></svg>");
+$accordion-padding-x: 0;
+$accordion-border-width: 0;
+$accordion-bg: transparent;
+$accordion-button-active-bg: transparent;
+$accordion-button-active-color: $gray-900;
+$accordion-color: $gray-900;
+$accordion-button-focus-border-color: transparent;
+$accordion-button-focus-box-shadow: transparent;
+$accordion-body-padding-y: 0;
+$accordion-padding-y: 1.25rem;
+
 //Badge
 $badge-font-weight:  400;
 
@@ -183,6 +198,7 @@ $navbar-light-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.
 $navbar-light-toggler-border-color: none;
 $navbar-toggler-padding-y: 0;
 $navbar-toggler-padding-x: 0;
+$navbar-padding-y: 1.3125rem;
 
 //Navlink
 $nav-link-font-size: 20px;
