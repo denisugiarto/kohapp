@@ -103,7 +103,7 @@
 
 <!-- Card Draft My Event -->
 {% macro eventDraft(name, date, imgUrl, status, color) %}
-<div class="d-flex flex-column-reverse flex-lg-row border-bottom border-dark mt-4 mt-md-6 gap-4">
+<div class="d-flex flex-column-reverse flex-lg-row border-bottom border-dark mt-4 mt-md-6 pb-4 gap-4">
   <div class="col">  
     <p class="mb-6">Last modified 2 hours ago</p>
     <div class="mb-4">
@@ -114,12 +114,12 @@
     </div>
   </div>
   <div class="col-auto">
-    <!-- <img src="{{ imgUrl }}" class="box-image-event" alt="profile" /> -->
+    <img src="{{ imgUrl }}" class="box-image-event" alt="profile" />
     <!-- No Image -->
-    <div class="box-image-event no-image">
-      <i class="fas fa-image d-block mb-4 fs-3"></i>
+    <!-- <div class="box-image-event no-image">
+      <i class="fas fa-image d-block fs-3"></i>
       <p class="fw-semibold fs-7 fs-md-5">No Image Available</p>
-    </div>
+    </div> -->
   </div>
 </div>
 {% endmacro %}
