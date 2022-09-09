@@ -199,7 +199,7 @@ body {
 
 .ads-img {
   @extend .rounded;
-  max-width: 320px;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   object-position: top;
@@ -212,6 +212,16 @@ body {
 
 .mh-200px {
   max-height: 200px;
+}
+
+.modal-ads {
+  @extend .modal-lg;
+  @extend .px-3;
+  @extend .px-md-6;
+
+  @include media-breakpoint-down(lg) {
+    max-width: 100%;
+  }
 }
 
 .navbar-brand {
@@ -231,10 +241,6 @@ body {
 
 .show_hide_password {
   z-index: 1000;
-}
-
-.mw-fit {
-  max-width: fit-content;
 }
 
 //Make Input placeholder italic
