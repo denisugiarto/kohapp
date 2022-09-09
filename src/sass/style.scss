@@ -199,11 +199,11 @@ body {
 
 .ads-img {
   @extend .rounded;
-  width: 100%;
+  max-width: 320px;
   height: auto;
   object-fit: cover;
   object-position: top;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 4 / 3;
 }
 
 .illustration-img {
