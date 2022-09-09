@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Donation
-Success</title>
+  <title>Donation Success</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <!-- Flatpickr Date Picker -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
@@ -39,11 +38,13 @@ Success</title>
       class="illustration-img mb-6"
     />
     <h5 class="fs-5 mb-6">Kia Ora! A Koha of 1100.00 has been made.</h5>
-    <a role="button" href="mydonation.html" class="btn btn-dark col-12 col-sm-6">See My Donation</a>
+    <a role="button" href="mydonation.html" class="btn btn-dark col-12 col-sm-6"
+      >See My Donation</a
+    >
   </div>
 </div>
 <div id="modalAds" class="modal fade" data-bs-backdrop="static">
-  <div class="modal-dialog modal-lg modal-dialog-centered mw-fit bg-transparent px-2 px-md-4 px-lg-0">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content position-relative">
       <div class="position-absolute top-0 start-100 translate-middle">
         <button
@@ -56,7 +57,22 @@ Success</title>
         </button>
       </div>
       <a href="" role="button">
-        <img src="./assets/images/image-ads.webp" class="ads-img" alt="ads" />
+        <div class="d-flex bg-primary rounded px-6 py-7">
+          <div class="col-6">
+            <h5 class="fs-5 mt-6 mb-4">
+              Abandoned babies and toddlers in orphanages, unable to breastfeed
+              and malnourished
+            </h5>
+            <a href="event-koha.html" class="btn btn-dark">Donate Now</a>
+          </div>
+          <div class="col-6 text-end">
+            <img
+              src="./assets/images/image-ads.webp"
+              class="ads-img"
+              alt="ads"
+            />
+          </div>
+        </div>
       </a>
     </div>
   </div>
@@ -107,7 +123,7 @@ Success</title>
  
 <script>
   $(document).ready(function () {
-    $('#modalAds').modal('show');
+    $("#modalAds").modal("show");
   });
 </script>
 
