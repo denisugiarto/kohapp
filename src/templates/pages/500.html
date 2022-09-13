@@ -1,0 +1,35 @@
+{% extends '../components/layout.html' %} {% set cssFiles =
+    './assets/css/style.css' %} {% set pageTitle = 'Internal Server Error' %} {% import
+    './navbar.html' as navbar %} {% block content %} {{ navbar.pages() }}
+    <div class="container box-content">
+      <div
+        class="row g-6 align-items-center justify-content-center mt-0 mt-md-3 mt-lg-7 text-center text-lg-start"
+      >
+        <div class="d-none d-lg-block col-lg-6">
+          <img
+            src="./assets/icons/icon-500.svg"
+            alt="icon page 500"
+            class="w-100"
+          />
+        </div>
+        <div class="col-11 col-lg-6">
+          <p class="mb-3">INTERNAL SERVER ERROR</p>
+          <p class="page-error-title">500</p>
+          <p class="fs-3 fs-md-2 lh-1 mt-3 mb-4">Sorry, we are having a problem with our system.</p>
+          <img
+            src="./assets/icons/icon-500.svg"
+            alt="icon page 500"
+            class="d-block d-lg-none w-100 mb-6"
+          />
+          <p class="mb-6">
+            We will have things fixed in no time.
+          </p>
+          <a href="home.html" class="border-bottom fw-semibold fs-5"
+            >Go to homepage</a
+          >
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %} {% block script %} {% endblock %}
+    

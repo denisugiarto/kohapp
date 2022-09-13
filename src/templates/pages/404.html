@@ -1,0 +1,36 @@
+{% extends '../components/layout.html' %} {% set cssFiles =
+'./assets/css/style.css' %} {% set pageTitle = 'Page Not Found' %} {% import
+'./navbar.html' as navbar %} {% block content %} {{ navbar.pages() }}
+<div class="container box-content">
+  <div
+    class="row g-6 align-items-center justify-content-center mt-0 mt-md-3 mt-lg-7 text-center text-lg-start"
+  >
+    <div class="d-none d-lg-block col-lg-7">
+      <img
+        src="./assets/icons/icon-404.svg"
+        alt="icon page 404"
+        class="w-100"
+      />
+    </div>
+    <div class="col-11 col-lg-5">
+      <p class="mb-3">PAGE NOT FOUND</p>
+      <p class="page-not-found-title">404</p>
+      <p class="fs-3 fs-md-2 lh-1 mt-3">You didn’t break the Internet.</p>
+      <img
+        src="./assets/icons/icon-404.svg"
+        alt="icon page 404"
+        class="d-block d-lg-none w-100"
+      />
+      <p class="mb-6">
+        but we can't find what you are looking for. Maybe these stories about
+        finding what you didn’t know you were looking for will take you
+        somewhere new?
+      </p>
+      <a href="home.html" class="border-bottom fw-semibold fs-5"
+        >Go to homepage</a
+      >
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block script %} {% endblock %}

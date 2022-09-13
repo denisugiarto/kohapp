@@ -228,6 +228,16 @@ body {
   @extend .text-wrap;
 }
 
+.page-error-title {
+  @extend .text-secondary;
+  @extend .lh-1;
+  font-size: 92px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 132px;
+  }
+}
+
 .page-title {
   @extend .fs-4;
   @extend .fs-md-3;
