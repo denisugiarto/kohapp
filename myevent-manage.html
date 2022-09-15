@@ -28,27 +28,27 @@
        
 <nav class="navbar navbar-light border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
-    <a href="myevent.html" class="fs-3"><i class="fas fa-arrow-left"></i></a>
-    <h1 class="navbar-brand text-center col">Manage</h1>
+    <a href="myevent.html" class="fs-4"><i class="fas fa-arrow-left"></i></a>
+    <h1 class="fs-5 fw-normal col">Manage</h1>
   </div>
 </nav>
 
 <div class="container box-content">
   <div class="alert-box my-4">
-    
 <div class="alert alert-success alert-dismissible fade show " role="alert">
   <i class="fas fa-check-circle me-1"></i>
   Link Copied
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
-
-  </div>
-  <div class="d-flex flex-column-reverse flex-md-row mt-4 gap-5 align-items-start align-items-md-center justify-content-between">
-    <h2 class="fs-md-3 fs-5 lh-base">
-      Tangihanga <br />
-      William Berghan
-    </h2>
-    <div class="d-flex">
+</div>
+  <div
+    class="row flex-column-reverse flex-lg-row mt-4 g-6 align-items-start align-items-lg-center justify-content-between"
+  >
+    <div class="col-12 col-lg-8">
+      <h2 class="fs-md-3 fs-5 mb-2">Tangihanga</h2>
+      <h2 class="fs-md-3 fs-5">William Berghan</h2>
+    </div>
+    <div class="col-auto d-flex">
       <div class="dropdown border-bottom me-6">
         <a
           role="button"
@@ -81,7 +81,10 @@
           </li>
         </ul>
       </div>
-      <a class="fw-semibold border-bottom" href="#qrCodeModal" data-bs-toggle="modal"
+      <a
+        class="fw-semibold border-bottom"
+        href="#qrCodeModal"
+        data-bs-toggle="modal"
         ><i class="fas fa-qrcode me-2"></i>QR Code</a
       >
     </div>
@@ -109,7 +112,7 @@
   <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button"
     >Koha</a
   >
-  <h5 class="fs-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
+  <h5 class="fs-5 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
   
 <div class="row border-bottom pb-3 mt-6 gx-2">
   <div class="col-auto">
@@ -246,10 +249,10 @@
  
 <a href="" role="button" class="flex-center fw-semibold mt-7">Show more<i class="fas fa-angle-down ms-2 fs-5"></i></a>
 
-  <div class="d-flex mt-7 border-bottom pb-3">
+  <div class="d-flex mt-7 border-bottom pb-3 align-items-center">
     <div class="col">
-      <h2 class="fs-3">Delete my event</h2>
-      <p class="mt-2">
+      <h2 class="fs-5">Delete my event</h2>
+      <p class="mt-2 d-none d-md-block">
         You will no longer have access to this event after deleting.
       </p>
     </div>
@@ -288,7 +291,6 @@
   </div>
 </div>
  
-
 <div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModal" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -307,8 +309,7 @@
     </div>
   </div>
 </div>
-
- 
+  
 <div class="box-bottom-navigation">
   <div class="container">
     <div class="d-flex justify-content-between">
