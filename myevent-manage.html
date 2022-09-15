@@ -7,14 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Manage Event
-Page</title>
+  <title>Manage Event Page</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <!-- Flatpickr Date Picker -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css" integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Trix Text Editor -->
   <link rel="stylesheet" type="text/css" href="./assets/library/trix/trix.css" />
   <script type="text/javascript" src="./assets/library/trix/trix.js"></script>
@@ -32,21 +34,81 @@ Page</title>
 </nav>
 
 <div class="container box-content">
-  <div class="d-flex mt-7 gap-5">
-    <h2 class="fs-md-3 fs-5 lh-base">Tangihanga <br> William Berghan</h2>
-    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Event</h6>
+  <div class="alert-box my-4">
+    
+<div class="alert alert-success alert-dismissible fade show " role="alert">
+  <i class="fas fa-check-circle me-1"></i>
+  Link Copied
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
   </div>
-  <img src="./assets/images/picture-1.webp" alt="picture" class="img-fluid rounded mt-6" />
+  <div class="d-flex flex-column-reverse flex-md-row mt-4 gap-5 align-items-start align-items-md-center justify-content-between">
+    <h2 class="fs-md-3 fs-5 lh-base">
+      Tangihanga <br />
+      William Berghan
+    </h2>
+    <div class="d-flex">
+      <div class="dropdown border-bottom me-6">
+        <a
+          role="button"
+          id="dropdownMenu"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          class="fw-semibold"
+        >
+          <i class="fas fa-share me-2"></i>Share
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+          aria-labelledby="dropdownMenu"
+        >
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-facebook me-2"></i>Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-whatsapp me-2"></i>Whatsapp
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <!-- <i class="fa-solid fa-link-horizontal"></i> -->
+              <i class="fa-solid fa-link me-2"></i>Copy Link
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a class="fw-semibold border-bottom" href="#qrCodeModal" data-bs-toggle="modal"
+        ><i class="fas fa-qrcode me-2"></i>QR Code</a
+      >
+    </div>
+  </div>
+  <img
+    src="./assets/images/picture-1.webp"
+    alt="picture"
+    class="img-fluid rounded mt-6"
+  />
   <div class="d-flex mt-4 flex-wrap gap-3">
-      <h6 class="col-12 col-lg-auto fs-6 lh-base">Open Donation : August 03 - August 10</h6>
-      <h5 class=" col-auto fs-5">$31,840 <span class="text-secondary fs-6 fw-normal">collected</span></h5>
-      <h5 class="col-auto fs-5">10 <span class="text-secondary fs-6 fw-normal">donations</span></h5>
+    <h6 class="col-12 col-lg-auto fs-6 lh-base">
+      Open Donation : August 03 - August 10
+    </h6>
+    <h5 class="col-auto fs-5">
+      $31,840 <span class="text-secondary fs-6 fw-normal">collected</span>
+    </h5>
+    <h5 class="col-auto fs-5">
+      10 <span class="text-secondary fs-6 fw-normal">donations</span>
+    </h5>
   </div>
   <p class="mt-6">
-    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
-    me mahi ma tenei paltform.
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu.
+    Mena kei te pirangi koe ki te hanga koha me mahi ma tenei paltform.
   </p>
-  <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button" >Koha</a>
+  <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button"
+    >Koha</a
+  >
   <h5 class="fs-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
   
 <div class="row border-bottom pb-3 mt-6 gx-2">
@@ -56,7 +118,7 @@ Page</title>
   <div class="col">
     <div class="row gx-2">
       <div class="col mt-0 mt-md-2 me-md-6">
-        <h4 class="fs-5">Mirjan Prenga</h4>
+        <h4 class="fs-5 mb-2">Mirjan Prenga</h4>
         <p class="text-secondary">Give donation $5.00</p>
         <p class="fs-6 my-3">
           Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
@@ -81,8 +143,7 @@ Page</title>
     </div>
   </div>
 </div>
-
-  
+ 
 <div class="row border-bottom pb-3 mt-6 gx-2">
   <div class="col-auto">
     <div class="box-avatar-image">E</div>
@@ -90,7 +151,7 @@ Page</title>
   <div class="col">
     <div class="row gx-2">
       <div class="col mt-0 mt-md-2 me-md-6">
-        <h4 class="fs-5">Esther Howard</h4>
+        <h4 class="fs-5 mb-2">Esther Howard</h4>
         <p class="text-secondary">Give donation $5.00</p>
         <p class="fs-6 my-3">
           Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
@@ -115,8 +176,7 @@ Page</title>
     </div>
   </div>
 </div>
-
-  
+ 
 <div class="row border-bottom pb-3 mt-6 gx-2">
   <div class="col-auto">
     <div class="box-avatar-image">J</div>
@@ -124,7 +184,7 @@ Page</title>
   <div class="col">
     <div class="row gx-2">
       <div class="col mt-0 mt-md-2 me-md-6">
-        <h4 class="fs-5">Jenny Wilson</h4>
+        <h4 class="fs-5 mb-2">Jenny Wilson</h4>
         <p class="text-secondary">Give donation $5.00</p>
         <p class="fs-6 my-3">
           Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
@@ -149,8 +209,7 @@ Page</title>
     </div>
   </div>
 </div>
-
-  
+ 
 <div class="row border-bottom pb-3 mt-6 gx-2">
   <div class="col-auto">
     <div class="box-avatar-image">R</div>
@@ -158,7 +217,7 @@ Page</title>
   <div class="col mt-0 mt-md-2 me-md-6">
     <div class="row gx-2">
       <div class="col">
-        <h4 class="fs-5">Robert Fox</h4>
+        <h4 class="fs-5 mb-2">Robert Fox</h4>
         <p class="text-secondary">Give donation $5.00</p>
         <video src="./assets/videos/sad videos.mp4" class="rounded img-fluid mt-3" controls></video>
         <p class="fs-6 my-3">
@@ -184,17 +243,24 @@ Page</title>
     </div>
   </div>
 </div>
-
-  
+ 
 <a href="" role="button" class="flex-center fw-semibold mt-7">Show more<i class="fas fa-angle-down ms-2 fs-5"></i></a>
 
   <div class="d-flex mt-7 border-bottom pb-3">
     <div class="col">
-        <h2 class="fs-3">Delete my event</h2>
-        <p class="mt-2">You will no longer have access to this event after deleting.</p>
+      <h2 class="fs-3">Delete my event</h2>
+      <p class="mt-2">
+        You will no longer have access to this event after deleting.
+      </p>
     </div>
     <div class="col-auto">
-        <a data-bs-toggle="modal" data-bs-target="#deleteEventModal" class="btn btn-outline-danger" role="button">Delete Event</a>
+      <a
+        data-bs-toggle="modal"
+        data-bs-target="#deleteEventModal"
+        class="btn btn-outline-danger"
+        role="button"
+        >Delete Event</a
+      >
     </div>
   </div>
 </div>
@@ -217,6 +283,26 @@ Page</title>
             <a href="myevent.html" id="deleteEventButton" role="button" class="btn btn-dark"> Delete </a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+<div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-start">
+        <h5 class="fs-5">QR Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h6 class="fs-6">Tangihanga William Berghan</h6>
+        <img src="./assets/images/image-qrcode.svg" alt="qrcode image" class="mt-7 mb-6">
+        <p class="fs-7">If you share with someone, they can scan with their camera to get to your event.</p>
+      </div>
+      <div class="modal-footer text-end">
+        <a role="button" class="btn btn-dark p-2" data-bs-dismiss="modal" aria-label="Close">Ok</a>
       </div>
     </div>
   </div>
@@ -266,9 +352,7 @@ Page</title>
 ></script>
  
 <script>
-  $(document).ready(function () {
-  });
-
+  $(document).ready(function () {});
 </script>
 
     <script>
