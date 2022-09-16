@@ -59,27 +59,26 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <div class="d-flex flex-column-reverse flex-md-row mt-0 mt-md-7">
-        <div class="col-12 col-md">
-          <h3 class="fs-4 fs-md-2 mb-4">Kohapp</h3>
+      <div class="sidebar d-flex flex-column-reverse flex-md-row justify-content-between mt-0 mt-md-7">
+        <div class="col-12 col-md-5 col-lg-5">
+          <h3 class="fs-4 fs-lg-3 mb-2">Kohapp</h3>
           <p>
-            Supporting users to digitally create, <br />
-            donate, collect and record <br />
-            donations.
+            Supporting users to digitally create, donate, collect and record donations.
           </p>
-          <a class="mt-6 d-block" href="about.html">About Kohapp</a>
-          <a class="mt-3 d-block" href="terms.html">Terms and Conditions</a>
+          <a class="mt-4 sidebar__nav-item d-block" href="about.html">About Kohapp</a>
+          <a class="mt-4 sidebar__nav-item d-block" href="terms.html">Terms and Conditions</a>
           <p class="mt-6"><i class="fas fa-copyright me-2"></i>Kohapp. 2022</p>
         </div>
-        <div class="col-12 col-md-auto d-flex flex-column gap-6">
-          <h3 class="fs-2">Menu</h3>
-          <a href="myevent.html"><i class="fas fa-file-alt me-2"></i>My Event</a>
-          <a href="myprofile.html"><i class="fas fa-user-alt me-2"></i>My Profile</a>
-          <a href="mydonation.html"><i class="fas fa-book me-2"></i>My Donation</a>
-          <a href="akahu-account.html"><i class="fas fa-user-gear me-2"></i>Akahu Account</a>
-          <a href="finance.html"><i class="fas fa-coins me-2"></i>Financial Management</a>
-          <a href="finance.html"><i class="fas fa-sign-in-alt me-2"></i>Logout</a>
-          <a role="button" href="signin.html" class="btn btn-primary mt-3 mb-7">Sign In</a>
+        <div class="col-12 col-md-4 col-lg-4 d-flex flex-column gap-4">
+          <h3 class="fs-4 fs-md-3">Menu</h3>
+          <a class="sidebar__nav-item" href="myevent.html"><i class="fas fa-file-alt me-2"></i>My Event</a>
+          <a class="sidebar__nav-item" href="collect.html"><i class="fas fa-file-alt me-2"></i>My Collection</a>
+          <a class="sidebar__nav-item" href="my-donation.html"><i class="fas fa-user-gear me-2"></i>Koha Given</a>
+          <a class="sidebar__nav-item" href="finance.html"><i class="fas fa-user-gear me-2"></i>Koha Received</a>
+          <a class="sidebar__nav-item" href="payment-account.html"><i class="fas fa-coins me-2"></i>My Payment Account</a>
+          <a class="sidebar__nav-item" href="myprofile.html"><i class="fas fa-user-alt me-2"></i>My Profile</a>
+          <a id="logoutBtn" class="sidebar__nav-item text-danger"><i class="fas fa-sign-in-alt me-2"></i>Logout</a>
+          <a id="signinBtn" role="button" href="signin.html" class="btn btn-primary mt-3 mb-6">Sign In</a>
         </div>
       </div>
     </div>
