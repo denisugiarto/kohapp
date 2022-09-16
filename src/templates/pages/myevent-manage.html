@@ -1,45 +1,117 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Manage Event
-Page' %} {% import './navbar.html' as navbar %} {% import './modal.html' as modal %} {% import './button.html' as button %} {% import './card.html' as card %} {% block content %} {{
-navbar.detailPages('Manage', 'myevent.html') }}
+{% extends '../components/layout.html' %} {% set cssFiles =
+'./assets/css/style.css' %} {% set pageTitle = 'Manage Event Page' %} {% import
+'./navbar.html' as navbar %} {% import './modal.html' as modal %} {% import
+'./button.html' as button %} {% import './card.html' as card %} {% import
+'./alert.html' as alert %} {% block content %} {{ navbar.detailPages('Manage',
+'myevent.html') }}
 <div class="container box-content">
-  <div class="d-flex mt-7 gap-5">
-    <h2 class="fs-md-3 fs-5 lh-base">Tangihanga <br> William Berghan</h2>
-    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Event</h6>
+  <div class="alert-box my-4">{{ alert.success('Link Copied')}}</div>
+  <div
+    class="row flex-column-reverse flex-lg-row mt-4 g-6 align-items-start align-items-lg-center justify-content-between"
+  >
+    <div class="col-12 col-lg-8">
+      <h2 class="fs-md-3 fs-5 mb-2">Tangihanga</h2>
+      <h2 class="fs-md-3 fs-5">William Berghan</h2>
+    </div>
+    <div class="col-auto d-flex">
+      <div class="dropdown border-bottom me-6">
+        <a
+          role="button"
+          id="dropdownMenu"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          class="fw-semibold"
+        >
+          <i class="fas fa-share me-2"></i>Share
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+          aria-labelledby="dropdownMenu"
+        >
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-facebook me-2"></i>Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-whatsapp me-2"></i>Whatsapp
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <!-- <i class="fa-solid fa-link-horizontal"></i> -->
+              <i class="fa-solid fa-link me-2"></i>Copy Link
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a
+        class="fw-semibold border-bottom"
+        href="#qrCodeModal"
+        data-bs-toggle="modal"
+        ><i class="fas fa-qrcode me-2"></i>QR Code</a
+      >
+    </div>
   </div>
-  <img src="./assets/images/picture-1.webp" alt="picture" class="img-fluid rounded mt-6" />
+  <img
+    src="./assets/images/picture-1.webp"
+    alt="picture"
+    class="img-fluid rounded mt-6"
+  />
   <div class="d-flex mt-4 flex-wrap gap-3">
-      <h6 class="col-12 col-lg-auto fs-6 lh-base">Open Donation : August 03 - August 10</h6>
-      <h5 class=" col-auto fs-5">$31,840 <span class="text-secondary fs-6 fw-normal">collected</span></h5>
-      <h5 class="col-auto fs-5">10 <span class="text-secondary fs-6 fw-normal">donations</span></h5>
+    <h6 class="col-12 col-lg-auto fs-6 lh-base">
+      Open Donation : August 03 - August 10
+    </h6>
+    <h5 class="col-auto fs-5">
+      $31,840 <span class="text-secondary fs-6 fw-normal">collected</span>
+    </h5>
+    <h5 class="col-auto fs-5">
+      10 <span class="text-secondary fs-6 fw-normal">donations</span>
+    </h5>
   </div>
   <p class="mt-6">
-    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
-    me mahi ma tenei paltform.
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu.
+    Mena kei te pirangi koe ki te hanga koha me mahi ma tenei paltform.
   </p>
-  <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button" >Koha</a>
-  <h5 class="fs-3 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
-  {{ card.messageReply('Mirjan Prenga', '5.00', 'reply1', 'show')}}
-  {{ card.messageReply('Esther Howard', '5.00', 'reply2')}}
-  {{ card.messageReply('Jenny Wilson', '5.00', 'reply3')}}
-  {{ card.messageReplyWithVideo('Robert Fox', '5.00', 'reply4')}}
-  {{ button.more() }}
-  <div class="d-flex mt-7 border-bottom pb-3">
+  <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button"
+    >Koha</a
+  >
+  <h5 class="fs-5 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
+  {{ card.messageReply('Mirjan Prenga', '5.00', 'reply1', 'show')}} {{
+  card.messageReply('Esther Howard', '5.00', 'reply2')}} {{
+  card.messageReply('Jenny Wilson', '5.00', 'reply3')}} {{
+  card.messageReplyWithVideo('Robert Fox', '5.00', 'reply4')}} {{ button.more()
+  }}
+  <div class="d-flex mt-7 border-bottom pb-3 align-items-center">
     <div class="col">
-        <h2 class="fs-3">Delete my event</h2>
-        <p class="mt-2">You will no longer have access to this event after deleting.</p>
+      <h2 class="fs-5">Delete my event</h2>
+      <p class="mt-2 d-none d-md-block">
+        You will no longer have access to this event after deleting.
+      </p>
     </div>
     <div class="col-auto">
-        <a data-bs-toggle="modal" data-bs-target="#deleteEventModal" class="btn btn-outline-danger" role="button">Delete Event</a>
+      <a
+        data-bs-toggle="modal"
+        data-bs-target="#deleteEventModal"
+        class="btn btn-outline-danger"
+        role="button"
+        >Delete Event</a
+      >
     </div>
   </div>
 </div>
-{{ modal.delete('Event', 'this event', 'myevent.html')}}
-{% endblock %} {% block script %}
+{{ modal.delete('Event', 'this event', 'myevent.html')}} {{ modal.qrcode()}} {%
+endblock %} {% block script %}
 <script>
-  $(document).ready(function () {
-  });
-
+  $(document).ready(function () {});
 </script>
 {% endblock %}
 
-<a role="button" data-bs-target="#deleteEventModal" data-bs-toggle="modal" class="fw-semibold ms-3"><i class="fas fa-trash-alt me-2"></i>Delete</a>
+<a
+  role="button"
+  data-bs-target="#deleteEventModal"
+  data-bs-toggle="modal"
+  class="fw-semibold ms-3"
+  ><i class="fas fa-trash-alt me-2"></i>Delete</a
+>

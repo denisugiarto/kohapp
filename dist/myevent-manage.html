@@ -1,0 +1,405 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Manage Event Page</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  <!-- Flatpickr Date Picker -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- Font Awesome -->
+  <!-- <script src="https://kit.fontawesome.com/afe7e62084.js" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css" integrity="sha512-RvQxwf+3zJuNwl4e0sZjQeX7kUa3o82bDETpgVCH2RiwYSZVDdFJ7N/woNigN/ldyOOoKw8584jM4plQdt8bhA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/brands.min.css" integrity="sha512-+oRH6u1nDGSm3hH8poU85YFIVTdSnS2f+texdPGrURaJh8hzmhMiZrQth6l56P4ZQmxeZzd2DqVEMqQoJ8J89A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/solid.min.css" integrity="sha512-uj2QCZdpo8PSbRGL/g5mXek6HM/APd7k/B5Hx/rkVFPNOxAQMXD+t+bG4Zv8OAdUpydZTU3UHmyjjiHv2Ww0PA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Trix Text Editor -->
+  <link rel="stylesheet" type="text/css" href="./assets/library/trix/trix.css" />
+  <script type="text/javascript" src="./assets/library/trix/trix.js"></script>
+</head>
+
+  <body>
+    <main class="bd-main vh-100">
+      <div class="bg-skew"></div>
+       
+<nav class="navbar navbar-light border-bottom border-secondary fixed-top">
+  <div class="container gap-3 gap-md-5 gap-xl-6">
+    <a href="myevent.html" class="fs-4"><i class="fas fa-arrow-left"></i></a>
+    <h1 class="fs-5 fw-normal col">Manage</h1>
+  </div>
+</nav>
+
+<div class="container box-content">
+  <div class="alert-box my-4">
+<div class="alert alert-success alert-dismissible fade show " role="alert">
+  <i class="fas fa-check-circle me-1"></i>
+  Link Copied
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+</div>
+  <div
+    class="row flex-column-reverse flex-lg-row mt-4 g-6 align-items-start align-items-lg-center justify-content-between"
+  >
+    <div class="col-12 col-lg-8">
+      <h2 class="fs-md-3 fs-5 mb-2">Tangihanga</h2>
+      <h2 class="fs-md-3 fs-5">William Berghan</h2>
+    </div>
+    <div class="col-auto d-flex">
+      <div class="dropdown border-bottom me-6">
+        <a
+          role="button"
+          id="dropdownMenu"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          class="fw-semibold"
+        >
+          <i class="fas fa-share me-2"></i>Share
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-dark dropdown-menu-end"
+          aria-labelledby="dropdownMenu"
+        >
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-facebook me-2"></i>Facebook
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="fa-brands fa-whatsapp me-2"></i>Whatsapp
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              <!-- <i class="fa-solid fa-link-horizontal"></i> -->
+              <i class="fa-solid fa-link me-2"></i>Copy Link
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a
+        class="fw-semibold border-bottom"
+        href="#qrCodeModal"
+        data-bs-toggle="modal"
+        ><i class="fas fa-qrcode me-2"></i>QR Code</a
+      >
+    </div>
+  </div>
+  <img
+    src="./assets/images/picture-1.webp"
+    alt="picture"
+    class="img-fluid rounded mt-6"
+  />
+  <div class="d-flex mt-4 flex-wrap gap-3">
+    <h6 class="col-12 col-lg-auto fs-6 lh-base">
+      Open Donation : August 03 - August 10
+    </h6>
+    <h5 class="col-auto fs-5">
+      $31,840 <span class="text-secondary fs-6 fw-normal">collected</span>
+    </h5>
+    <h5 class="col-auto fs-5">
+      10 <span class="text-secondary fs-6 fw-normal">donations</span>
+    </h5>
+  </div>
+  <p class="mt-6">
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu.
+    Mena kei te pirangi koe ki te hanga koha me mahi ma tenei paltform.
+  </p>
+  <a href="event-koha.html" class="btn btn-dark mt-6 w-100" role="button"
+    >Koha</a
+  >
+  <h5 class="fs-5 mt-6 pb-3 border-bottom">Message from manuhiri (10)</h5>
+  
+<div class="row border-bottom pb-3 mt-6 gx-2">
+  <div class="col-auto">
+    <div class="box-avatar-image">M</div>
+  </div>
+  <div class="col">
+    <div class="row gx-2">
+      <div class="col mt-0 mt-md-2 me-md-6">
+        <h4 class="fs-5 mb-2">Mirjan Prenga</h4>
+        <p class="text-secondary">Give donation $5.00</p>
+        <p class="fs-6 my-3">
+          Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+        </p>
+        <a class="fw-semibold" data-bs-toggle="collapse" data-bs-target=".reply1" role="button">Reply</a>
+      </div>
+      <div class="col-auto">
+        <p class="text-secondary">1 hour ago</p>
+      </div>
+    </div>
+    <div class="collapse fade reply1 show">
+      <div class="row mt-0 mt-md-2 gy-3 gy-md-0 gx-3 px-2">
+        <input
+          type="text"
+          name="reply-msg"
+          id=""
+          class="col-12 col-md form-control me-3"
+          placeholder="write a thank you note"
+        />
+        <button class="col-auto btn btn-dark">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="row border-bottom pb-3 mt-6 gx-2">
+  <div class="col-auto">
+    <div class="box-avatar-image">E</div>
+  </div>
+  <div class="col">
+    <div class="row gx-2">
+      <div class="col mt-0 mt-md-2 me-md-6">
+        <h4 class="fs-5 mb-2">Esther Howard</h4>
+        <p class="text-secondary">Give donation $5.00</p>
+        <p class="fs-6 my-3">
+          Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+        </p>
+        <a class="fw-semibold" data-bs-toggle="collapse" data-bs-target=".reply2" role="button">Reply</a>
+      </div>
+      <div class="col-auto">
+        <p class="text-secondary">1 hour ago</p>
+      </div>
+    </div>
+    <div class="collapse fade reply2 ">
+      <div class="row mt-0 mt-md-2 gy-3 gy-md-0 gx-3 px-2">
+        <input
+          type="text"
+          name="reply-msg"
+          id=""
+          class="col-12 col-md form-control me-3"
+          placeholder="write a thank you note"
+        />
+        <button class="col-auto btn btn-dark">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="row border-bottom pb-3 mt-6 gx-2">
+  <div class="col-auto">
+    <div class="box-avatar-image">J</div>
+  </div>
+  <div class="col">
+    <div class="row gx-2">
+      <div class="col mt-0 mt-md-2 me-md-6">
+        <h4 class="fs-5 mb-2">Jenny Wilson</h4>
+        <p class="text-secondary">Give donation $5.00</p>
+        <p class="fs-6 my-3">
+          Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+        </p>
+        <a class="fw-semibold" data-bs-toggle="collapse" data-bs-target=".reply3" role="button">Reply</a>
+      </div>
+      <div class="col-auto">
+        <p class="text-secondary">1 hour ago</p>
+      </div>
+    </div>
+    <div class="collapse fade reply3 ">
+      <div class="row mt-0 mt-md-2 gy-3 gy-md-0 gx-3 px-2">
+        <input
+          type="text"
+          name="reply-msg"
+          id=""
+          class="col-12 col-md form-control me-3"
+          placeholder="write a thank you note"
+        />
+        <button class="col-auto btn btn-dark">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="row border-bottom pb-3 mt-6 gx-2">
+  <div class="col-auto">
+    <div class="box-avatar-image">R</div>
+  </div>
+  <div class="col mt-0 mt-md-2 me-md-6">
+    <div class="row gx-2">
+      <div class="col">
+        <h4 class="fs-5 mb-2">Robert Fox</h4>
+        <p class="text-secondary">Give donation $5.00</p>
+        <video src="./assets/videos/sad videos.mp4" class="rounded img-fluid mt-3" controls></video>
+        <p class="fs-6 my-3">
+          Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time.
+        </p>
+        <a class="fw-semibold" data-bs-toggle="collapse" data-bs-target=".reply4" role="button">Reply</a>
+      </div>
+      <div class="col-auto">
+        <p class="text-secondary">1 hour ago</p>
+      </div>
+    </div>
+    <div class="collapse fade reply4">
+      <div class="row mt-0 mt-md-2 gy-3 gy-md-0 gx-3 px-2">
+        <input
+          type="text"
+          name="reply-msg"
+          id=""
+          class="col-12 col-md form-control me-3"
+          placeholder="write a thank you note"
+        />
+        <button class="col-auto btn btn-dark">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<a href="" role="button" class="flex-center fw-semibold mt-7">Show more<i class="fas fa-angle-down ms-2 fs-5"></i></a>
+
+  <div class="d-flex mt-7 border-bottom pb-3 align-items-center">
+    <div class="col">
+      <h2 class="fs-5">Delete my event</h2>
+      <p class="mt-2 d-none d-md-block">
+        You will no longer have access to this event after deleting.
+      </p>
+    </div>
+    <div class="col-auto">
+      <a
+        data-bs-toggle="modal"
+        data-bs-target="#deleteEventModal"
+        class="btn btn-outline-danger"
+        role="button"
+        >Delete Event</a
+      >
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="deleteEventModal" tabindex="-1" aria-labelledby="EventModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-start">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure delete <span class="fw-semibold">this event</span>?</p>
+      </div>
+      <div class="modal-footer">
+        <div class="row gx-3 justify-content-end">
+          <div class="col-auto">
+            <a role="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+          </div>
+          <div class="col-auto">
+            <a href="myevent.html" id="deleteEventButton" role="button" class="btn btn-dark"> Delete </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-start">
+        <h5 class="fs-5">QR Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h6 class="fs-6">Tangihanga William Berghan</h6>
+        <img src="./assets/images/image-qrcode.svg" alt="qrcode image" class="mt-7 mb-6">
+        <p class="fs-7">If you share with someone, they can scan with their camera to get to your event.</p>
+      </div>
+      <div class="modal-footer text-end">
+        <a role="button" class="btn btn-dark p-2" data-bs-dismiss="modal" aria-label="Close">Ok</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<div class="box-bottom-navigation">
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <a href="home.html" class="navigation-item">
+        <i class="fas fa-home mb-2 fs-4"></i>
+        <h6 class="h6">Home</h6>
+      </a>
+      <a href="event.html" class="navigation-item">
+        <i class="fas fa-location-dot mb-2 fs-4"></i>
+        <h6 class="h6">Events</h6>
+      </a>
+      <a href="collect.html" class="navigation-item">
+        <i class="fas fa-arrow-right-arrow-left mb-2 fs-4"></i>
+        <h6 class="h6">Collect</h6>
+      </a>
+      <a href="notification.html" class="navigation-item position-relative">
+        <div class="position-absolute start-50 ms-2 top-0 translate-middle bg-primary text-dark rounded-circle icon icon-md fs-7 lh-1">4</div>
+        <i class="fas fa-bell mb-2 fs-4"></i>
+        <h6 class="h6">Alerts</h6>
+      </a>
+    </div>
+  </div>
+</div>
+
+    </main>
+      <script
+  src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.slim.min.js"
+  integrity="sha512-6ORWJX/LrnSjBzwefdNUyLCMTIsGoNP6NftMy2UAm1JBm6PRZCO1d7OHBStWpVFZLO+RerTvqX/Z9mBFfCJZ4A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+ 
+<script>
+  $(document).ready(function () {});
+</script>
+
+    <script>
+      $(document).ready(function () {
+        $('.show-password').click(function () {
+          if ($(this).children().hasClass('fa-eye')) {
+            //change icon
+            $(this).children().removeClass('fa-eye').addClass('fa-eye-slash');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'text');
+          } else {
+            //change icon
+            $(this).children().removeClass('fa-eye-slash').addClass('fa-eye');
+            //change inputt type to text
+            $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
+          }
+        });
+      });
+
+      $(document).scroll(function () {
+        let $nav = $('.navbar.fixed-top');
+        $nav.toggleClass('scrolled', $(document).scrollTop() > $nav.height());
+      });
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation');
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener(
+            'submit',
+            function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -36,7 +36,7 @@ function webpImage() {
 }
 
 function images() {
-  return src('src/images/*.webp').pipe(dest('dist/assets/images'));
+  return src('src/images/*.{webp,svg}').pipe(dest('dist/assets/images'));
 }
 
 //svg
@@ -59,7 +59,7 @@ function watchTask() {
   watch('src/templates/**/**/*.{html,njk}', htmlTemplate);
   watch('src/sass/**/*.scss', compilescss);
   watch('src/images/*.{jpg,png}', webpImage);
-  watch('src/images/*.webp', images);
+  watch('src/images/*.{webp,svg}', images);
   watch('src/icons/*.svg', svgCopy);
 }
 

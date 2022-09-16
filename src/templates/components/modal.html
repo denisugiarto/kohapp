@@ -43,3 +43,25 @@
   </div>
 </div>
 {% endmacro %}
+
+
+{% macro qrcode() %}
+<div class="modal fade" id="qrCodeModal" tabindex="-1" aria-labelledby="qrCodeModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-start">
+        <h5 class="fs-5">QR Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <h6 class="fs-6">Tangihanga William Berghan</h6>
+        <img src="./assets/images/image-qrcode.svg" alt="qrcode image" class="mt-7 mb-6">
+        <p class="fs-7">If you share with someone, they can scan with their camera to get to your event.</p>
+      </div>
+      <div class="modal-footer text-end">
+        <a role="button" class="btn btn-dark p-2" data-bs-dismiss="modal" aria-label="Close">Ok</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

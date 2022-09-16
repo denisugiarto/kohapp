@@ -88,12 +88,6 @@ body {
   @extend .icon;
   @extend .icon-lg;
   font-size: 1rem;
-
-  @include media-breakpoint-up('md') {
-    font-size: 24px;
-    width: 64px;
-    height: 64px;
-  }
 }
 
 .box-bottom-navigation {
