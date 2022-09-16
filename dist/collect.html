@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="msapplication-TileColor" content="#ffffff" />
   <meta name="theme-color" content="#ffffff" />
-  <title>Collect Page</title>
+  <title>My Collection</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   <!-- Flatpickr Date Picker -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
@@ -29,7 +29,7 @@
 <nav class="navbar navbar-light border-bottom border-secondary fixed-top">
   <div class="container gap-3 gap-md-5 gap-xl-6">
     <a href="home.html" class="fs-4"><i class="fas fa-arrow-left"></i></a>
-    <h1 class="fs-5 fw-normal col">Collect</h1>
+    <h1 class="fs-5 fw-normal col">My Collection</h1>
   </div>
 </nav>
 
@@ -268,6 +268,7 @@
 
     <script>
       $(document).ready(function () {
+        //Show hide Password
         $('.show-password').click(function () {
           if ($(this).children().hasClass('fa-eye')) {
             //change icon
@@ -281,6 +282,20 @@
             $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
           }
         });
+
+        //Sign In and Logout Button
+        let logoutBtn = $('#logoutBtn');
+        let signinBtn = $('#signinBtn') 
+        logoutBtn.addClass('d-none');
+        signinBtn.click(function() {
+          $(this).addClass('d-none');
+          logoutBtn.removeClass('d-none')
+        })
+
+        logoutBtn.click(function() {
+          $(this).addClass('d-none');
+          signinBtn.removeClass('d-none');
+        })
       });
 
       $(document).scroll(function () {

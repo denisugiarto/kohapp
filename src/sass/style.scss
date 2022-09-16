@@ -223,8 +223,7 @@ body {
 }
 
 .page-error-title {
-  @extend .text-secondary;
-  @extend .lh-1;
+  @extend .text-secondary, .lh-1;
   font-size: 92px;
 
   @include media-breakpoint-up(md) {
@@ -233,10 +232,7 @@ body {
 }
 
 .page-title {
-  @extend .fs-4;
-  @extend .fs-md-3;
-  @extend .fs-xl-2;
-  @extend .text-center;
+  @extend .fs-4, .fs-md-3, .fs-xl-2, .text-center;
 }
 
 .pointer {
@@ -245,6 +241,15 @@ body {
 
 .show_hide_password {
   z-index: 1000;
+}
+
+.sidebar {
+  &__nav-item {
+    @extend .border-bottom, .border-white, .py-2;
+  }
+  &__nav-item:hover {
+    @extend .border-primary;
+  }
 }
 
 //Make Input placeholder italic
