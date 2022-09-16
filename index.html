@@ -29,105 +29,7 @@ Content</title>
 <div class="container box-content">
   <h1 class="page-title">Welcome to kohapp</h1>
   <h5 class="fs-5 mt-5 mb-1">All Roles</h5>
-  <div class="row row-cols-3 g-3">
-    <a href="signin.html">Sign In</a>
-    <a href="signup.html">Sign Up</a>
-    <a href="recover-password.html">Recover Password</a>
-    <a href="recover-change-password.html">Recover Change Password</a>
-    <a href="home.html">
-      Home
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="create-event.html">Create Event</a>
-    <a href="start-collection.html">Start Collection</a>
-    <a href="event.html">Event</a>
-    <a href="give-donation.html">Give Donation</a>
-    <a href="event-detail.html"
-      >Event Detail
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="collection-detail.html"
-      >Collection Detail
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="collection-koha.html">Collection Koha</a>
-    <a href="event-koha.html">Event Koha</a>
-    <a href="donation-success.html">Donation Success </a>
-    <a href="notification.html">Notification</a>
-    <a href="myprofile.html">My Profile</a>
-    <a href="account-setting.html">Account Setting</a>
-    <a href="change-email.html">Change Email</a>
-    <a href="change-password.html">Change Password</a>
-    <a href="akahu-account.html">Akahu Account</a>
-    <a href="myevent.html">My Event</a>
-    <a href="myevent-manage.html">
-      Manage My Event
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="collect-manage.html">
-      Manage My Collect
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="collect.html">Collect</a>
-    <a href="edit-collect.html">Edit Collect</a>
-    <a href="edit-event.html">Edit Event</a>
-    <a href="edit-profile.html">Edit Profile</a>
-    <a href="mydonation.html">My Donation</a>
-    <a href="finance.html">Financial Management</a>
-    <a href="withdraw.html">Withdraw</a>
-    <a href="about.html"> About Us </a>
-    <a href="terms.html"> Term and Conditions </a>
-    <a href="404.html">
-      Page Not Found 404
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-    <a href="500.html">
-      Page Internal Server Error 500
-      <span class="position-relative">
-        <span
-          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
-        >
-          New
-        </span>
-      </span>
-    </a>
-  </div>
+  <div id="pageContent" class="row row-cols-3 g-3"></div>
 </div>
 
     </main>
@@ -147,7 +49,227 @@ Content</title>
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
 ></script>
-  
+ 
+<script>
+  function capitalize(text) {
+    let words = text.split(" ");
+    return words
+      .map((word) => {
+        return word.slice(0, 1).toUpperCase() + word.substring(1);
+      })
+      .join(" ");
+  }
+
+  let pageList = [
+    {
+      link: "404",
+      name: "Page Not Found 404",
+      new: false,
+    },
+    {
+      link: "500",
+      name: "internal server error 500",
+      new: false,
+    },
+    {
+      link: "about",
+      name: "about us",
+      new: false,
+    },
+    {
+      link: "account-setting",
+      name: "account setting",
+      new: false,
+    },
+    {
+      link: "akahu-account",
+      name: "akahu account",
+      new: false,
+    },
+    {
+      link: "change-email",
+      name: "change email",
+      new: false,
+    },
+    {
+      link: "change-password",
+      name: "change password",
+      new: false,
+    },
+    {
+      link: "collect",
+      name: "collect",
+      new: false,
+    },
+    {
+      link: "collection-detail",
+      name: "collection detail",
+      new: false,
+    },
+    {
+      link: "collection-koha",
+      name: "collection koha",
+      new: false,
+    },
+    {
+      link: "collect-manage",
+      name: "manage collection",
+      new: false,
+    },
+    {
+      link: "create-event",
+      name: "create event",
+      new: false,
+    },
+    {
+      link: "donation-success",
+      name: "donation success",
+      new: false,
+    },
+    {
+      link: "edit-collect",
+      name: "edit collect",
+      new: false,
+    },
+    {
+      link: "edit-event",
+      name: "edit event",
+      new: false,
+    },
+    {
+      link: "edit-profile",
+      name: "edit profile",
+      new: false,
+    },
+    {
+      link: "event",
+      name: "event",
+      new: false,
+    },
+    {
+      link: "event-detail",
+      name: "event detail",
+      new: false,
+    },
+    {
+      link: "event-koha",
+      name: "event koha",
+      new: false,
+    },
+    {
+      link: "finance",
+      name: "finance",
+      new: false,
+    },
+    {
+      link: "give-donation",
+      name: "give donation",
+      new: false,
+    },
+    {
+      link: "home",
+      name: "home",
+      new: false,
+    },
+    {
+      link: "mydonation",
+      name: "my donation",
+      new: false,
+    },
+    {
+      link: "myevent",
+      name: "my event",
+      new: false,
+    },
+    {
+      link: "myevent-manage",
+      name: "Manage My Event",
+      new: false,
+    },
+    {
+      link: "myprofile",
+      name: "my profile",
+      new: false,
+    },
+    {
+      link: "notification",
+      name: "notification",
+      new: false,
+    },
+    {
+      link: "recover-change-password",
+      name: "recover change password",
+      new: false,
+    },
+    {
+      link: "recover-password",
+      name: "recover password",
+      new: false,
+    },
+    {
+      link: "signin",
+      name: "sign in",
+      new: false,
+    },
+    {
+      link: "signup",
+      name: "sign up",
+      new: false,
+    },
+    {
+      link: "start-collection",
+      name: "start collection",
+      new: false,
+    },
+    {
+      link: "terms",
+      name: "terms and conditions",
+      new: false,
+    },
+    {
+      link: "withdraw",
+      name: "withdraw",
+      new: false,
+    },
+  ];
+  let newPage = [
+    "home",
+    "event-detail",
+    "collection-detail",
+    "myevent-manage",
+    "collect-manage",
+    "404",
+    "500",
+  ];
+  let pageContent = $("#pageContent");
+  let newElement = `<span class="position-relative">
+        <span
+          class="position-absolute top-0 start-0 ms-3 translate-middle p-1 bg-primary4 text-white rounded-circle fs-8"
+        >
+          New
+        </span>
+      </span>`;
+
+  //Function change new in pageList Array from newPage array
+  newPage.forEach((list) => {
+    pageList.forEach((item) => {
+      if (list === item.link) {
+        item.new = true;
+      }
+    });
+  });
+
+  //Generate list element from pageList Array
+  let contentList = pageList.map((list) => {
+    list.name = capitalize(list.name);
+    return `<a href="${list.link}.html">${list.name}
+              ${list.new ? newElement : ""}
+            </a>`;
+  });
+
+  pageContent.append(contentList);
+</script>
+
     <script>
       $('.show-password').click(function () {
         if ($(this).children().hasClass('fa-eye')) {
