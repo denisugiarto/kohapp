@@ -215,10 +215,22 @@ Content' %} {% set cssFiles = './assets/css/style.css' %} {% block content %}
     });
   });
 
+  //sort pageList by link
+  pageList.sort((a, b) => {
+    if (a.link < b.link) {
+      return -1;
+    }
+    if (b.link > a.link) {
+      return 1;
+    }
+
+    return 0;
+  });
+
   //Generate list element from pageList Array
   let contentList = pageList.map((list) => {
     list.name = capitalize(list.name);
-    return `<a href="${list.link}.html">${list.name}
+    return `<a href="${list.link}.html">${list.name} 
               ${list.new ? newElement : ""}
             </a>`;
   });
