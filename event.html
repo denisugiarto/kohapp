@@ -78,8 +78,8 @@
           <a class="sidebar__nav-item" href="finance.html"><i class="fas fa-user-gear me-2"></i>Koha Received</a>
           <a class="sidebar__nav-item" href="payment-account.html"><i class="fas fa-coins me-2"></i>My Payment Account</a>
           <a class="sidebar__nav-item" href="myprofile.html"><i class="fas fa-user-alt me-2"></i>My Profile</a>
-          <a id="logoutBtn" class="sidebar__nav-item text-danger"><i class="fas fa-sign-in-alt me-2"></i>Logout</a>
-          <a id="signinBtn" role="button" href="signin.html" class="btn btn-primary mt-3 mb-6">Sign In</a>
+          <a id="logoutBtn" class="sidebar__nav-item text-danger" role="button"><i class="fas fa-sign-in-alt me-2"></i>Logout</a>
+          <a id="signinBtn" role="button" class="btn btn-primary mt-3 mb-6 mb-md-0">Sign In</a>
         </div>
       </div>
     </div>
@@ -209,6 +209,7 @@
 
     <script>
       $(document).ready(function () {
+        //Show hide Password
         $('.show-password').click(function () {
           if ($(this).children().hasClass('fa-eye')) {
             //change icon
@@ -222,6 +223,20 @@
             $(this).closest('.position-relative').find('.form-control').attr('type', 'password');
           }
         });
+
+        //Sign In and Logout Button
+        let logoutBtn = $('#logoutBtn');
+        let signinBtn = $('#signinBtn') 
+        logoutBtn.addClass('d-none');
+        signinBtn.click(function() {
+          $(this).addClass('d-none');
+          logoutBtn.removeClass('d-none')
+        })
+
+        logoutBtn.click(function() {
+          $(this).addClass('d-none');
+          signinBtn.removeClass('d-none');
+        })
       });
 
       $(document).scroll(function () {
