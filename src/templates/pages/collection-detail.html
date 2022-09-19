@@ -1,18 +1,18 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Collection
-Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %} {{
+Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% import './modal.html' as modal %} {% block content %} {{
 navbar.detailPages('Kohapp', 'event.html') }}
 <div class="container box-content">
   <div class="row flex-column-reverse flex-lg-row g-6 mt-7 align-items-start align-items-lg-center justify-content-between">
     <h2 class="col-12 col-lg-7 col-xl-8 fs-md-3 fs-5 lh-sm">Wade Warren cheerful smile was snatched away by a leaky</h2>
     <div class="col-auto d-flex">
-      <h6 class="fs-6"><i class="fas fa-tag me-1"></i>Collection</h6>
-      <div class="dropdown ms-6">
+      
+      <div class="dropdown me-6 border-bottom">
         <a
           role="button"
           id="dropdownMenu"
           data-bs-toggle="dropdown"
           aria-expanded="false"
-          class="fw-semibold border-bottom"
+          class="fw-semibold "
         >
           <i class="fas fa-share me-2"></i>Share
         </a>
@@ -38,6 +38,12 @@ navbar.detailPages('Kohapp', 'event.html') }}
           </li>
         </ul>
       </div>
+      <a
+        class="fw-semibold border-bottom"
+        href="#qrCodeModal"
+        data-bs-toggle="modal"
+        ><i class="fas fa-qrcode me-2"></i>QR Code</a
+      >
     </div>
   </div>
   <img src="./assets/images/picture-2.webp" alt="picture" class="img-fluid rounded mt-6" />
@@ -54,6 +60,7 @@ navbar.detailPages('Kohapp', 'event.html') }}
   {{ card.message('Jenny Wilson', '5.00')}}
   {{ card.messageWithVideo('Robert Fox', '5.00')}}
 </div>
+{{ modal.qrcode()}} 
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
