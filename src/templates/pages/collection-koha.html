@@ -1,11 +1,8 @@
 {% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event
-Detail' %} {% import './navbar.html' as navbar %} {% import '../components/card.html' as card %} {% block content %} {{
+Detail' %} {% import './navbar.html' as navbar %} {% import './header.html' as header %} {% import '../components/card.html' as card %} {% block content %} {{
 navbar.detailPages('Kohapp', 'event.html') }}
 <div class="container box-content">
-  <div class="d-flex mt-7 gap-5">
-    <h2 class="fs-md-3 fs-5">Wade Warren cheerful smile was snatched away by a leaky</h2>
-    <h6 class="col-auto fs-6 ms-auto"><i class="fas fa-tag me-1"></i>Collection</h6>
-  </div>
+  {{ header.collectDetail() }}
   <img src="./assets/images/picture-2.webp" alt="picture" class="img-fluid rounded mt-6" />
   <p class="mt-4 text-end"><u>Post by Calib Jackson</u></p>
   <h6 class="fs-6 mt-6">$31,840 <span class="text-secondary fw-normal">collected of $100,000 goal</span></h6>
