@@ -1,19 +1,32 @@
-{% extends '../components/layout.html' %} {% set cssFiles = './assets/css/style.css' %} {% set pageTitle = 'Event Koha'
-%} {% import './navbar.html' as navbar %} {% import './header.html' as header %} {% import '../components/card.html' as card %} {% block content %} {{
+{% extends '../components/layout.html' %} {% set cssFiles =
+'./assets/css/style.css' %} {% set pageTitle = 'Event Koha' %} {% import
+'./navbar.html' as navbar %} {% import './header.html' as header %} {% import
+'../components/card.html' as card %} {% block content %} {{
 navbar.detailPages('Kohapp', 'event.html') }}
 <div class="container box-content">
   {{ header.eventDetail() }}
-  <img src="./assets/images/picture-1.webp" alt="picture" class="img-fluid rounded mt-6" />
-  <p class="mt-4 text-end "><u>Post by Calib Jackson</u></p>
+  <img
+    src="./assets/images/picture-1.webp"
+    alt="picture"
+    class="img-fluid rounded mt-6"
+  />
+  <p class="mt-4 text-end"><u>Post by Calib Jackson</u></p>
   <h6 class="fs-6 mt-6">Open Donation : August 03 - August 10</h6>
   <p class="mt-6">
-    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu. Mena kei te pirangi koe ki te hanga koha
-    me mahi ma tenei paltform.
+    Ka nui te pouri o ta matou panui atu kua mate to tatou hoa aroha a Wiremu.
+    Mena kei te pirangi koe ki te hanga koha me mahi ma tenei paltform.
   </p>
   <form action="" class="needs-validation" novalidate>
     <div class="mt-7">
       <label for="name" class="form-label">Your Name</label>
-      <input type="text" name="name" id="name" class="form-control" placeholder="Input your name" required />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control"
+        placeholder="Input your name"
+        required
+      />
       <div class="invalid-feedback">Please enter your name</div>
     </div>
     <div class="mt-6">
@@ -38,13 +51,38 @@ navbar.detailPages('Kohapp', 'event.html') }}
       <div class="card">
         <div class="card-header">
           <div class="d-flex gap-6 mb-3">
-            <a role="button" data-bs-target=".message-template" data-bs-toggle="collapse"
-              ><i class="fas fa-message me-2"></i>Message Template</a
+            <a
+              role="button"
+              data-bs-target=".message-template"
+              data-bs-toggle="collapse"
             >
-            <input id="video" name="video" type="file" accept="video/*" class="d-none" />
-            <label for="video" class="pointer"><i class="fas fa-paperclip me-2"></i>Add Video Message</label>
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <i class="fas fa-message me-2"></i>
+                </div>
+                <div class="col">Text Template</div>
+              </div>
+            </a>
+            <input
+              id="video"
+              name="video"
+              type="file"
+              accept="video/*"
+              class="d-none"
+            />
+            <label for="video" class="pointer">
+              <div class="d-flex align-items-center">
+                <div class="col-auto">
+                  <i class="fas fa-paperclip me-2"></i>
+                </div>
+                <div class="col">Add Video Message</div>
+              </div>
+              
+            </label>
           </div>
-          <p class="fs-7 text-secondary">Click one of the options above to add a message</p>
+          <p class="fs-7 text-secondary">
+            Click one of the options above to add a message
+          </p>
         </div>
         <div class="card-body">
           <div class="message-template collapse fade mb-4">
@@ -56,58 +94,54 @@ navbar.detailPages('Kohapp', 'event.html') }}
               required
             >
               <option>
-                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
+                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow
+                freely for you all at this time
               </option>
               <option>
-                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
-              </option>
-              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
-              <option>
-                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
+                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken
+                during this heart-breaking time
               </option>
               <option>
-                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
+                Kahore he pouri e kore e taea e te aroha. There is no darkness
+                that love cannot conquer
               </option>
-              <option>Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer</option>
+              <option>
+                Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow
+                freely for you all at this time
+              </option>
+              <option>
+                Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken
+                during this heart-breaking time
+              </option>
+              <option>
+                Kahore he pouri e kore e taea e te aroha. There is no darkness
+                that love cannot conquer
+              </option>
             </select>
-            <div class="invalid-feedback">No message selected, please select message</div>
-            <!-- <div class="position-relative">
-              <select id="message-template" class="form-select message-template-box" size="5" aria-label="select message template" required>
-                <option>
-                  Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
-                </option>
-                <option>
-                  Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
-                </option>
-                <option>
-                  Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-                </option>
-                <option>
-                  Maringi noa ngā roimata ki a koutou te whānau pani Me tears flow freely for you all at this time
-                </option>
-                <option>
-                  Paurangi tōku ngakau i tēnei wā pōuri I sit here heart stricken during this heart-breaking time
-                </option>
-                <option>
-                  Kahore he pouri e kore e taea e te aroha. There is no darkness that love cannot conquer
-                </option>
-              </select>
-              <div class="position-absolute mt-n6 start-0 fs-7 bg-primary2 w-100 text-end rounded-bottom border-top text-secondary px-2 py-1">
-                11 message template
-              </div>
-              <div class="invalid-feedback">No message selected, please select message</div>
-            </div> -->
+            <div class="invalid-feedback">
+              No message selected, please select message
+            </div>
             <div class="d-flex justify-content-end gap-3 mt-5">
-              <button class="btn btn-outline-dark px-4" data-bs-target=".message-template" data-bs-toggle="collapse">
+              <button
+                class="btn btn-outline-dark px-4"
+                data-bs-target=".message-template"
+                data-bs-toggle="collapse"
+              >
                 Cancel
               </button>
-              <button type="submit" class="confirm btn btn-dark px-4">Confirmation</button>
+              <button type="submit" class="confirm btn btn-dark px-4">
+                Confirmation
+              </button>
             </div>
           </div>
           <div class="position-relative video-box collapse fade">
             <video class="w-100 rounded" controls></video>
-            <div class="position-absolute translate-middle top-0 start-100 mt-4 ms-n4">
-              <a role="button" class="delete-video"><i class="fas fa-xmark text-white"></i></a>
+            <div
+              class="position-absolute translate-middle top-0 start-100 mt-4 ms-n4"
+            >
+              <a role="button" class="delete-video">
+                <i class="fas fa-xmark text-white"></i>
+              </a>
             </div>
           </div>
           <textarea
@@ -127,35 +161,38 @@ navbar.detailPages('Kohapp', 'event.html') }}
 {% endblock %} {% block script %}
 <script>
   $(document).ready(function () {
-    $('.navigation-item > h6:contains("Events")').parent().addClass('active');
-    $('form').submit(function (event) {
+    $('.navigation-item > h6:contains("Events")').parent().addClass("active");
+    $("form").submit(function (event) {
       event.preventDefault();
-      if ($('input[name=name]').val() && $('input[name=donation]').val() > 0) {
-        window.location.href = 'donation-success.html';
+      if ($("input[name=name]").val() && $("input[name=donation]").val() > 0) {
+        window.location.href = "donation-success.html";
       }
     });
     //button corfirm add option to textarea message
-    $('button.confirm').click(function () {
-      let value = $.trim($('#message-template option:selected').text());
-      let textAreaValue = $('#message').val() == '' ? $('#message').val() : $('#message').val() + ' ';
-      if (value != '') {
-        $('#message').val(textAreaValue + value);
-        $('.message-template').toggleClass('show');
+    $("button.confirm").click(function () {
+      let value = $.trim($("#message-template option:selected").text());
+      let textAreaValue =
+        $("#message").val() == ""
+          ? $("#message").val()
+          : $("#message").val() + " ";
+      if (value != "") {
+        $("#message").val(textAreaValue + value);
+        $(".message-template").toggleClass("show");
       }
     });
 
-    $('.delete-video').click(function () {
-      $('.video-box').removeClass('show');
-      $('input#video').val('');
+    $(".delete-video").click(function () {
+      $(".video-box").removeClass("show");
+      $("input#video").val("");
     });
   });
 
-  $('input#video').change(function () {
-    let file = $('input#video').prop('files')[0];
+  $("input#video").change(function () {
+    let file = $("input#video").prop("files")[0];
     let type = file.type;
     let videoLink = URL.createObjectURL(file);
-    $('.video-box').addClass('show');
-    $('video').attr('src', videoLink).attr('type', type);
+    $(".video-box").addClass("show");
+    $("video").attr("src", videoLink).attr("type", type);
   });
 </script>
 {% endblock %}
